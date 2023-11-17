@@ -10,10 +10,10 @@ export const Home = (data) => {
   
        <dl>
        <h2 class="id">${animal.name}</h2>
-       <img src="${animal.imageUrl}" alt="${animal.name}"/>
+       <img class="imgTarjetas" src="${animal.imageUrl}" alt="${animal.name}"/>
        <dt>Nombre:</dt>
        <dd itemprop ='name' class="parrafoBox">${animal.name}</dd>
-       <dt>Descripción:</dt>
+       <dt>Descripción:</dt> 
        <dd itemprop ='' class="descripcion">${animal.shortDescription}</dd>
        <dt>Peso en Kilos:</dt>
        <dd itemprop ='' class="parrafoBox">${animal.facts.pesoEnKilos}</dd>
