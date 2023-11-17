@@ -7,7 +7,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
+  
     }
 header{
     display: flex;
@@ -17,23 +17,11 @@ header{
     top: -20px;
     padding-right: 180px;
     
+
     
     
 }
-/*
-h1{
-    background-color: rgb(252, 252, 252);
-    margin: 10px 200px 10px 200px;
-    box-shadow: 10px 20px 10px rgb(3, 3, 3);
-    border-radius: 0px 0px 20px 20px;
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    padding: 20px 100px 20px 100px;
-    
-}
-*/
+
 h1{
     background-color: rgb(0, 0, 0);
     color: #ffffff;
@@ -49,6 +37,7 @@ h1{
     top: -20px;
     
 }
+
 
 .contenedor1{
     display: flex;
@@ -88,13 +77,7 @@ h1{
     max-width: 280px;
     min-width: 280px;
 }
-/*
-.lista{
-    
-    justify-content: center;
-    align-items: center;
-}
-*/
+
 img{
     width: 90%;
     height: 170px;
@@ -352,7 +335,9 @@ label{
     body{
         background-image: url(https://images.pexels.com/photos/1420008/pexels-photo-1420008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
         background-repeat:initial;
-    }
+
+    } 
+
     .abrir-menu,
     .cerrar-menu{
         display: block;
@@ -458,6 +443,7 @@ label{
         margin-left: 0px;
     }
 }
+
 @media screen and (min-width: 385px) and (max-width: 399px){
     body{
         background-image: url(https://images.pexels.com/photos/1420008/pexels-photo-1420008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
@@ -467,11 +453,9 @@ label{
     .cerrar-menu{
         display: block;
         border: 0;
-        
+
         background-color: transparent;
         cursor: pointer;
-        
-
     }
 
     .abrir-menu {
@@ -479,14 +463,12 @@ label{
         font-size: 30px;
         position: fixed;
         margin-top: 20px;
-        
-    }
 
+    }
     .cerrar-menu {
-        color: #f80909;
+        color: #F80909;
         font-size: 50px;
     }
-
 
     .contenedor1 {
         opacity: 0;
@@ -498,8 +480,8 @@ label{
         position: absolute;
         top:0;
         left: 0;
-        
-        background-color: #ffffff;
+
+        background-color: #FFFFFF;
         padding: 50px;
         box-shadow: 0 0 0 100vmax rgba(165, 138, 138, 0.5);
         width: 35%;
@@ -526,11 +508,9 @@ label{
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
-    
 
     .box{
         flex-grow: 1;
-        
         height: 600px;
         background-color: rgb(252, 252, 252);
         text-align: center;
@@ -561,19 +541,20 @@ label{
         box-shadow: 0px 10px 10px rgb(3, 3, 3);
     }
     #sinDatos{
-       
         text-align: center;
         font-size: 25px;
-        color: #ffffff;
+        color: #FFFFFF;
         margin-left: 0px;
     }
 }
+
 
 @media screen and (min-width: 360px) and (max-width: 375px){
     body{
         background-image: url(https://images.pexels.com/photos/1420008/pexels-photo-1420008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
         background-repeat:initial;
     }
+
     .abrir-menu,
     .cerrar-menu{
         display: block;
@@ -796,7 +777,7 @@ label{
         background-image: url(https://images.pexels.com/photos/1420008/pexels-photo-1420008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
         background-repeat:initial;
     }
-   
+
     .abrir-menu,
     .cerrar-menu{
         display: block;
