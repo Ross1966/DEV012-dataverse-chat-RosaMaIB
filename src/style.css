@@ -20,7 +20,38 @@ header{
     
 
     
-    
+}
+
+.fondoError{
+  background-color: #8FCC73;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 50px;
+  
+
+}
+
+.TextError{
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.TextError2{
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+.TipoError{
+    font-size: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.jirafaTriste{
+    width: 20%;
+    height: 250px;
 }
 
 h1{
@@ -79,7 +110,7 @@ h1{
     min-width: 280px;
 }
 
-img{
+.imgTarjetas{
     width: 90%;
     height: 170px;
     margin: 0px;

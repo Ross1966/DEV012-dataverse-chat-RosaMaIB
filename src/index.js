@@ -1,5 +1,6 @@
 import {Example} from './views/Example.js';
 import { Home } from './views/home.js';
+import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
 import data from './data/dataset.js'
 
@@ -8,6 +9,7 @@ import data from './data/dataset.js'
 const routes = {
     "/Example": Example,
     "/": Home,
+    "/Error": Error,
 }
 const renderSection = document.getElementById("root");
 
