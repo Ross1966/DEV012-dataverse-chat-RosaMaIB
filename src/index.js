@@ -1,15 +1,15 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
-/*
+
 import Example from './views/Example.js';
 
-Ejemplo de definición de rutas:
+//Ejemplo de definición de rutas:
 
 const routes = {
     "/": Example,
-    ...
+    
 }
-*/
+
 
 /*
 TODO:
