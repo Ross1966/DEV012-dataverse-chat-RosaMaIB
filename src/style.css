@@ -24,11 +24,12 @@ header{
 
 .fondoError{
   background-color: #8FCC73;
-  width: 100%;
+  width: 101.3%;
   height: 100%;
   text-align: center;
-  padding: 50px;
-  
+  padding-top: 60px;
+  padding-bottom: 76px;
+  margin: -8px -10px -20px -10px;
 
 }
 

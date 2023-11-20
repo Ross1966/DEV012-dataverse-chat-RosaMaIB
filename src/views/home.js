@@ -1,6 +1,8 @@
 
 export const Home = (data) => {
     console.log('Data recibida', data);
+
+  
     let elemento = "";
     data.forEach((animal) => {
         console.log('Verificando animales', animal);
