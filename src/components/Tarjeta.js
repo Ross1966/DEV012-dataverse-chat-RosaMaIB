@@ -1,14 +1,9 @@
-import  data  from '../data/dataset.js';
+import dataset from "../data/dataset";
 
-//import dataset from "../data/dataset";
-
-//import { Footer } from './components/Footer.js';
-//import { Titulo } from './components/Titulo.js';
-
-export const Home = () => {
+export const Tarjeta = (dataset) => {
     //console.log('Data recibida', data);
     let elemento = "";
-    data.forEach((animal) => {
+    dataset.forEach((animal) => {
         //console.log('Verificando animales', animal);
       elemento += `
       
@@ -44,4 +39,3 @@ export const Home = () => {
     
     
   };
-//import { Tarjeta } from '../components/Tarjeta.js';

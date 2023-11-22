@@ -2,36 +2,56 @@ import {Example} from './views/Example.js';
 import { Home } from './views/home.js';
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
-import data from './data/dataset.js'
-
+//import { Footer } from './components/footer.js';
+//import { Titulo } from './components/Titulo.js';
+import  dataset  from './data/dataset.js';
 
 
 const routes = {
-    "/Example": Example,
     "/": Home,
     "/Error": Error,
 }
-const renderSection = document.getElementById("root");
+//const renderSection = ocument.getElemedntById("root");
+//renderSection.innerHTML =  Home(dataset),
+//console.log(dataset)
 
-
-
-if ((data)) {
-    renderSection.innerHTML = Home(data);
+/*if ((dataset)) {
+    renderSection.innerHTML = Home(dataset);
     console.log("HOLA SI HAY DATA")
 } else {
     console.log("Error: NO HAY DATA QUE MOSTRAR");
+}*/
+setRoutes(routes);
+setRootElement(document.getElementById("root"));
+
+/*function encabezado() {
+    const section2= document.createElement("section")
+    section2.appendChild(Titulo())
+    document.body.appendChild(section2);
 }
 
+encabezado();
 
 
-setRoutes(routes);
-setRootElement(renderSection);
+
+function init() {
+    
+    const section1= document.createElement("section")
+    section1.appendChild(Footer())
+    document.body.appendChild(section1);
+  }
+  init();*/
+
 
 
 window.addEventListener("DOMContentLoaded", (e) => {
-    onURLChange(e.currentTarget.location.pathname);
-    
+    onURLChange(e);
+    setRootElement(document.getElementById("root"));
+    console.log(e.currentTarget)
 })
+
+window.onpopstate = onURLChange;
+
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
 

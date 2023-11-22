@@ -4,4 +4,4 @@ export const Example = () => {
     return result;
 };
 
-export default Example;
+//export default Example;

@@ -10,11 +10,11 @@ body{
     background-attachment: fixed;
   
     }
+
 header{
     display: flex;
     justify-content: center;
     background-color: rgb(240, 102, 10);
-    
     top: -20px;
     padding-right: 180px;
     
@@ -53,6 +53,11 @@ header{
     width: 20%;
     height: 250px;
 }
+
+/*p{
+    color: white;
+    font-size: 90px;
+}*/
 
 h1{
     background-color: rgb(0, 0, 0);
@@ -94,8 +99,9 @@ h1{
     list-style-type: none;
     gap: 70px;
     flex-wrap: wrap;
-    margin-top: -30px;
+    margin-top: 200px;
     margin-left: 300px;
+    
 }
 .box{
     flex-grow: 1;
