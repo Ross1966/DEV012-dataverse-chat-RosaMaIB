@@ -14,5 +14,5 @@ export const Error = () => {
 
     
 
-    return errorView
+    return errorView;
 }

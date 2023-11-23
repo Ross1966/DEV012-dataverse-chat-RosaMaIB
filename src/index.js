@@ -2,8 +2,8 @@ import {Example} from './views/Example.js';
 import { Home } from './views/home.js';
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
-import data from './data/dataset.js'
-
+import { Footer } from './components/footer.js';
+import dataset from './data/dataset.js';
 
 
 const routes = {
@@ -12,20 +12,32 @@ const routes = {
     "/Error": Error,
 }
 const renderSection = document.getElementById("root");
+renderSection.innerHTML = Home(dataset);
 
 
+setRoutes(routes)
+setRootElement(renderSection);
 
-if ((data)) {
-    renderSection.innerHTML = Home(data);
+
+/*
+if ((dataset)) {
+    renderSection.innerHTML = Home(dataset);
     console.log("HOLA SI HAY DATA")
 } else {
     console.log("Error: NO HAY DATA QUE MOSTRAR");
 }
+*/
+
+function init() {
+    
+    const section1= document.createElement("section")
+    section1.appendChild(Footer())
+    document.body.appendChild(section1);
+  }
+  init();
 
 
 
-setRoutes(routes);
-setRootElement(renderSection);
 
 
 window.addEventListener("DOMContentLoaded", (e) => {
