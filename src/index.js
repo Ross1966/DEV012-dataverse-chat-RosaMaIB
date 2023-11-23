@@ -9,6 +9,7 @@ import  dataset  from './data/dataset.js';
 
 const routes = {
     "/": Home,
+    "/Example": Example,
     "/Error": Error,
 }
 //const renderSection = ocument.getElemedntById("root");
@@ -45,10 +46,12 @@ function init() {
 
 
 window.addEventListener("DOMContentLoaded", (e) => {
-    onURLChange(e);
+    onURLChange(e.currentTarget.location.pathname);
     setRootElement(document.getElementById("root"));
     console.log(e.currentTarget)
 })
+
+
 
 window.onpopstate = onURLChange;
 

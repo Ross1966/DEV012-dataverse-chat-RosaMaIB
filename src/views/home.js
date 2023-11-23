@@ -1,12 +1,7 @@
 import  data  from '../data/dataset.js';
 
-//import dataset from "../data/dataset";
-
-//import { Footer } from './components/Footer.js';
-//import { Titulo } from './components/Titulo.js';
 
 export const Home = () => {
-    //console.log('Data recibida', data);
     let elemento = "";
     data.forEach((animal) => {
         //console.log('Verificando animales', animal);
@@ -30,18 +25,18 @@ export const Home = () => {
        <dd itemprop ='' class="parrafoBox">${animal.facts.tipoDieta}</dd>
        </dl>
        </li>
-      
-       
+             
      `;
-      //.join("");
-  
-      //console.log(data)
-  
-      
+ 
+
     });
     //console.log(elemento);
-    return `<ul class="lista">${elemento}</ul>`;
+    //return `<ul class="lista">${elemento}</ul>`;
     
+    const container = document.createElement('div');
+    container.innerHTML = `<ul class="lista">${elemento}</ul>`;
+ 
+    return container 
     
-  };
-//import { Tarjeta } from '../components/Tarjeta.js';
+}
+  

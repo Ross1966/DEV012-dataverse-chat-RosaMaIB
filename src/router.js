@@ -14,7 +14,7 @@ const renderView = (pathname, props = {})=>{
     
     if(ROUTES[pathname]){
         const componentResultView = ROUTES[pathname](props);
-        console.log(ROUTES[pathname]) 
+        //console.log(ROUTES[pathname]) 
         root.appendChild(componentResultView);
     }else{
         root.appendChild(ROUTES["/Error"](props))
