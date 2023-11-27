@@ -1,18 +1,19 @@
-import { Home } from "./home";
+
+//import  Home  from "./home";
 
 export const Example = () => {
-    
-    
-    /*const result = document.createElement('p');
-    result.innerHTML += "Hola Mundo";
-    return result;
-    */
+    const result = document.createElement('p');
+    let traerVista = sessionStorage.getItem(`selecVista`)
+    result.innerHTML = (traerVista);
+   
+   // const tarjeta = document.createElement('div');
+   
+       //let vista = document.createElement('p');
+      
+       //vista.innerHTML = (traerVista);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const holaHome = Home();
-    document.body.appendChild(holaHome)
-    console.log("hOLA")
-
-});
- 
+       return result
+   
+   
 }
+

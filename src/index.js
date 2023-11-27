@@ -42,8 +42,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
 })
 
 
-
 window.onpopstate = onURLChange;
+
+
+
 
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 

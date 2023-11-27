@@ -1,9 +1,11 @@
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
+//import { vistaTarjeta } from '../dataFunctions.js';
+
 
 
 export const Home = () => {
-    // let elemento = "";
+     let selecVista = "";
     const container = document.createElement('ul');
     container.classList.add("lista")
     data.forEach((animal) => {
@@ -16,7 +18,7 @@ export const Home = () => {
         <img class="imgTarjetas" src="${animal.imageUrl}" alt="${animal.name}"/>
         <dt>Nombre:</dt>
         <dd itemprop ='name' class="parrafoBox">${animal.name}</dd>
-        <dt>Descripción:</dt>
+        <dt>Descripción:</dt> 
         <dd itemprop ='' class="descripcion">${animal.shortDescription}</dd>
         <dt>Peso en Kilos:</dt>
         <dd itemprop ='' class="parrafoBox">${animal.facts.pesoEnKilos}</dd>
@@ -26,17 +28,37 @@ export const Home = () => {
         <dd itemprop ='' class="parrafoBox">${animal.facts.tipoHabitad}</dd>
         <dt>Dieta:</dt>
         <dd itemprop ='' class="parrafoBox">${animal.facts.tipoDieta}</dd>
-        </dl>
+        </dl>   
       `;
-        const box = li.querySelector(`#${animal.id}`);
+          const box = li.querySelector(`#${animal.id}`);
           box.addEventListener("click", function() {
-            console.log(`soy una Prueba de ${animal.id}`)
-            navigateTo('/Example','nada')
+            sessionStorage.selecVista = `
+            <div id="contenedorTarjeta">
+            <h2>${animal.name}</h2>
+            <img class="imgIndividual" src="${animal.imageUrl}">
+            <p class="imgParrafo">${animal.description}</p>
+            </div>
+            `
+            console.log(`selecVista`)
+            //console.log(`soy una Prueba de ${animal.id}`)
+            navigateTo('/Example','pathname')
         });
         container.appendChild(li)
+
     });
     //console.log(elemento);
     //return `<ul class="lista">${elemento}</ul>`;
+
+   
+    
+    
     // container.innerHTML = `<ul class="lista">${elemento}</ul>`;
+
+  
+  
+ 
     return container;
+
+    
 }
+  
