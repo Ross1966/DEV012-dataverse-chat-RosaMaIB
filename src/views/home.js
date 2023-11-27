@@ -33,8 +33,9 @@ export const Home = () => {
       `;
           const box = li.querySelector(`#${animal.id}`);
           box.addEventListener("click", function() {
-            sessionStorage.selecVista = `${animal.id} ${animal.imageUrl} ${animal.description}`
-            console.log(`selecVista`)
+            sessionStorage.selecVista = animal.id
+           
+            console.log(selecVista)
             //console.log(`soy una Prueba de ${animal.id}`)
             navigateTo('/Example','pathname')
         });
