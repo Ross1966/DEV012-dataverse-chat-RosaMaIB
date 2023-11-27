@@ -7,23 +7,27 @@ export const setRoutes = (newRoutesSet) =>{
 export const setRootElement = (newRootElement) => {
     rootElement = newRootElement;
 }
-const renderView = (pathname, props)=>{
+const renderView = (pathname, props = {})=>{
     const root = rootElement;
-    root.innerHTML="";
-
+    console.log(renderView)
+    root.innerHTML= '';
+    
     if(ROUTES[pathname]){
         const componentResultView = ROUTES[pathname](props);
-        rootElement.appendChild(componentResultView);
+        //console.log(ROUTES[pathname]) 
+        root.appendChild(componentResultView);
     }else{
-        rootElement.appendChild(ROUTES["/error"]())
+        root.appendChild(ROUTES["/Error"](props))
+        //console.log(ROUTES)
     }
 }
 
 export const navigateTo = (pathname, props ={}) => {
-    window.history.pushState(pathname.substring(1), "", window.location.origin + pathname);
+    const urlVisitada = window.location.origin + pathname;
+    window.history.pushState({}, "", urlVisitada);
     renderView(pathname, props);
 }
 
 export const onURLChange = (location) =>{
-    navigateTo(location, {})
+    navigateTo(location)
 }

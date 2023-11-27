@@ -1,7 +1,18 @@
+import { Home } from "./home";
+
 export const Example = () => {
-    const result = document.createElement('p');
+    
+    
+    /*const result = document.createElement('p');
     result.innerHTML += "Hola Mundo";
     return result;
-};
+    */
 
-export default Example;
+document.addEventListener("DOMContentLoaded", () => {
+    const holaHome = Home();
+    document.body.appendChild(holaHome)
+    console.log("hOLA")
+
+});
+ 
+}
