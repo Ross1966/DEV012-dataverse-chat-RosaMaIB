@@ -3,9 +3,9 @@ import { navigateTo } from '../router.js';
 //import { vistaTarjeta } from '../dataFunctions.js';
 
 
-
 export const Home = () => {
-     let selecVista = "";
+     //let selecVista = "";
+    
     const container = document.createElement('ul');
     container.classList.add("lista")
     data.forEach((animal) => {
@@ -35,12 +35,13 @@ export const Home = () => {
           box.addEventListener("click", function() {
             sessionStorage.selecVista = animal.id
            
-            console.log(selecVista)
+            //console.log(selecVista)
             //console.log(`soy una Prueba de ${animal.id}`)
-            navigateTo('/Example','pathname')
+            navigateTo('/Example','props')
+           
         });
         container.appendChild(li)
-
+       
     });
     //console.log(elemento);
     //return `<ul class="lista">${elemento}</ul>`;
@@ -50,9 +51,9 @@ export const Home = () => {
     
     // container.innerHTML = `<ul class="lista">${elemento}</ul>`;
 
-  
-  
+    
  
+
     return container 
 
     

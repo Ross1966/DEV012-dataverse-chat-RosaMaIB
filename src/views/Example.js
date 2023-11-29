@@ -1,6 +1,4 @@
 
-//import  Home  from "./home";
-
 import { getElementById } from "../lib/apiData.js";
 
 export const Example = () => {
@@ -14,13 +12,9 @@ export const Example = () => {
     <p class="imgParrafo">${animal.description}</p>
     </div>
     `
-    result.innerHTML = (vistaHtml);
+    result.innerHTML = vistaHtml;
    
-   // const tarjeta = document.createElement('div');
    
-       //let vista = document.createElement('p');
-      
-       //vista.innerHTML = (traerVista);
 
        return result
    
