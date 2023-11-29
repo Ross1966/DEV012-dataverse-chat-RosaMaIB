@@ -4,5 +4,5 @@ export const Titulo = () => {
     const crearHeader = document.createElement("header")
     crearHeader.innerHTML = crearTitulo;
     
-return crearHeader
+return crearHeader;
 }
