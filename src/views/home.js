@@ -1,5 +1,8 @@
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
+import { Footer } from '../components/Footer.js';
+import { Titulo } from '../components/Titulo.js';
+import { Filtros } from '../components/Filtros.js';
 //import { vistaTarjeta } from '../dataFunctions.js';
 
 
@@ -12,7 +15,6 @@ export const Home = () => {
       //<li itemscope itemtype="animal" class="box" id="imagen">
         const li = document.createElement("li")
         li.classList.add("box")
-
         li.innerHTML=`
         <dl id="${animal.id}">
         <h2 class="id">${animal.name}</h2>
@@ -44,16 +46,17 @@ export const Home = () => {
     });
     //console.log(elemento);
     //return `<ul class="lista">${elemento}</ul>`;
-
-   
-    
+    container.appendChild(Filtros());
+    console.log(Filtros())
+    container.appendChild(Titulo());
+    container.appendChild(Footer());
     
     // container.innerHTML = `<ul class="lista">${elemento}</ul>`;
 
   
   
  
-    return container 
+    return container;
 
     
 }
