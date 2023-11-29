@@ -4,5 +4,5 @@ import dataset from "../data/dataset.js";
 const result = dataset.find( function(element) {
  return element.id === id
 })
-return result
+return result;
 }

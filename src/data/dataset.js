@@ -5,7 +5,7 @@ export default [
       "name": "Oso",
       "shortDescription": "Un mamífero carnívoro de gran tamaño y fuerza.",
       "description": "El oso es un mamífero grande y poderoso que se encuentra en diversas partes del mundo. Hay varias especies de osos, cada una con sus propias características únicas y hábitats. Los osos son conocidos por su fuerza y adaptabilidad, lo que les permite sobrevivir en una variedad de entornos, desde bosques hasta tundras. Aunque son omnívoros, la dieta de los osos puede incluir peces, bayas, frutas, insectos y mamíferos pequeños. Algunas de las especies de osos más conocidas incluyen el oso pardo, el oso polar y el panda gigante.",
-      "imageUrl": "https://d7lju56vlbdri.cloudfront.net/var/ezwebin_site/storage/images/_aliases/img_1col/noticias/el-adn-de-fosiles-de-osos-aporta-datos-geneticos-esenciales-para-la-conservacion-de-la-especie/7594-2-esl-MX/El-ADN-de-fosiles-de-osos-aporta-datos-geneticos-esenciales-para-la-conservacion-de-la-especie.jpg",
+      "imageUrl": "https://www.timeforkids.com/wp-content/uploads/2019/11/111519_K1Bears.png?w=1024",
       "facts": {
         "tipoHabitad": "Bosque",
         "tipoDieta": "Omnívora",
@@ -18,7 +18,7 @@ export default [
       "name": "Cerdo",
       "shortDescription": "Un mamífero domesticado criado por su carne y otros productos.",
       "description": "El cerdo (Sus scrofa domesticus) es un mamífero domesticado que ha sido criado por los seres humanos durante miles de años. Es una de las principales fuentes de carne en muchas culturas y se utiliza para producir una variedad de productos como jamón, tocino y salchichas. Los cerdos son conocidos por su apetito voraz y su capacidad para adaptarse a una variedad de entornos. Son animales sociales que a menudo se crían en granjas. Los cerdos pueden variar en tamaño y color, pero generalmente tienen cuerpos compactos, hocicos alargados y orejas caídas.",
-      "imageUrl": "https://img2.rtve.es/i/?w=1600&i=1465204528174.jpg",
+      "imageUrl": "https://www.catorce6.com/images/noticias/breves/CerdoPrin.jpg",
       "facts": {
         "tipoHabitad": "Granja",
         "tipoDieta": "Omnívora",
