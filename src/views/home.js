@@ -1,5 +1,8 @@
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
+import { Footer } from '../components/Footer.js';
+import { Titulo } from '../components/Titulo.js';
+import { Filtros } from '../components/Filtros.js';
 //import { vistaTarjeta } from '../dataFunctions.js';
 
 
@@ -32,14 +35,9 @@ export const Home = () => {
       `;
           const box = li.querySelector(`#${animal.id}`);
           box.addEventListener("click", function() {
-            sessionStorage.selecVista = `
-            <div id="contenedorTarjeta">
-            <h2>${animal.name}</h2>
-            <img class="imgIndividual" src="${animal.imageUrl}">
-            <p class="imgParrafo">${animal.description}</p>
-            </div>
-            `
-            console.log(`selecVista`)
+            sessionStorage.selecVista = animal.id
+           
+            console.log(selecVista)
             //console.log(`soy una Prueba de ${animal.id}`)
             navigateTo('/Example','pathname')
         });
@@ -48,9 +46,10 @@ export const Home = () => {
     });
     //console.log(elemento);
     //return `<ul class="lista">${elemento}</ul>`;
-
-   
-    
+    container.appendChild(Filtros());
+    console.log(Filtros())
+    container.appendChild(Titulo());
+    container.appendChild(Footer());
     
     // container.innerHTML = `<ul class="lista">${elemento}</ul>`;
 
