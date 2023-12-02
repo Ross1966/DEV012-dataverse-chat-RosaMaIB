@@ -28,6 +28,7 @@ export const navigateTo = (pathname, props ={}) => {
     renderView(pathname, props);
 }
 
-export const onURLChange = (location) =>{
-    navigateTo(location)
+export const onURLChange = () =>{
+    const pathname = window.location.pathname;
+    navigateTo(pathname);
 }

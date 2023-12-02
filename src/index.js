@@ -3,6 +3,7 @@ import {Example} from './views/Example.js';
 
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
+import { vistaApi } from './views/apiVista.js';
 
 
 
@@ -10,6 +11,7 @@ const routes = {
     "/": Home,
     "/Example": Example,
     "/Error": Error,
+    "/ApiKey": vistaApi
 }
 
 setRoutes(routes);
