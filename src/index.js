@@ -1,8 +1,9 @@
 import { Home } from './views/home.js';
 import {Example} from './views/Example.js';
-
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
+
+
 
 
 
@@ -15,23 +16,6 @@ const routes = {
 setRoutes(routes);
 setRootElement(document.getElementById("root"));
 
-/*function encabezado() {
-    const section2= document.createElement("section")
-    section2.appendChild(Titulo())
-    document.body.appendChild(section2);
-}
-*/
-
-
-/*
-function init() {
-    
-    const section1= document.createElement("section")
-    section1.appendChild(Footer())
-    document.body.appendChild(section1);
-  }
-  init();
-  */
 
   
 

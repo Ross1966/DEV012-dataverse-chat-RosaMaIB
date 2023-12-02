@@ -10,7 +10,7 @@ export const setRootElement = (newRootElement) => {
 const renderView = (pathname, props = {})=>{
     const root = rootElement;
     root.innerHTML= '';
-    //console.log(renderView)
+    
     
     if(ROUTES[pathname]){
         const componentResultView = ROUTES[pathname](props);
@@ -24,12 +24,14 @@ const renderView = (pathname, props = {})=>{
 
 export const navigateTo = (pathname, props = {}) => {
     const urlVisitada = window.location.origin + pathname;
-    window.history.pushState('',"", urlVisitada);
+    window.history.pushState({},"", urlVisitada);
     console.log(urlVisitada)
     renderView(pathname, props);
+   
 }
 
 export const onURLChange = (location) =>{
-    navigateTo(location)
+    const pathname = window.location.pathname;
+     renderView(pathname)
    
 }
