@@ -23,8 +23,19 @@ setRootElement(document.getElementById("root"));
     document.body.appendChild(section2);
 }
 */
+/*
+ const mostrarTexto = result.querySelector("#mostrarTexto");
+    const miInput = result.querySelector("#miInput");
+    const resultado = result.querySelector("#resultado");
 
+    let historialText = []
 
+    mostrarTexto.addEventListener("click", function() {
+        let texto = miInput.value;
+        resultado.innerHTML = texto;
+        console.log("SOY EL ADDEVENT LISTENER");
+    });
+*/
 /*
 function init() {
     
