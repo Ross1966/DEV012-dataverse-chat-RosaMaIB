@@ -17,4 +17,4 @@ export const vistaApi = () =>{
     apiView.innerHTML = apiHtml;
 
     return apiView;
-}
+} 
