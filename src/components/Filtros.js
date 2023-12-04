@@ -10,8 +10,10 @@ export const Filtros = () =>{
             <option value="asc">A - Z</option>
             
             <option value="desc">Z - A</option>
-          </select>
+            
+           
 
+          </select>
           <label>Tipo de Dieta:</label>
           <select name="dieta" data-testid="select-filter">
             <option value="" disabled selected>--Elige una Opción--</option>
@@ -23,7 +25,7 @@ export const Filtros = () =>{
           </select>
 
 
-          <label>Habitad:</label> 
+          <label>Hábitat:</label> 
           <select name="habitad">
             <option value="" disabled selected>--Elige una Opción--</option>
             <option value="Bosque">Bosque</option>
@@ -43,11 +45,14 @@ export const Filtros = () =>{
         
           <p id="calcular"><span>Promedio de peso:</span><br>Animales carnívoros</p>
 
-          <p id="calcularHabitad"><span>Porcentaje total Habitad:</span><br>Selva</p>
-    `
+          <p id="calcularHabitad"><span>Porcentaje total Hábitat:</span><br>Selva</p>
+    `;
+    
+               
     const crearDivView = document.createElement("div");
     crearDivView.classList.add("contenedor1")
     crearDivView.innerHTML =  filtroView;
 
+    
     return crearDivView;
 }

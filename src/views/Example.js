@@ -1,8 +1,6 @@
 
-//import  Home  from "./home";
-
 import { getElementById } from "../lib/apiData.js";
-import { navigateTo } from "../router.js";
+//import { navigateTo } from "../router.js";
 
 
 
