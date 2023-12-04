@@ -4,8 +4,8 @@ import { Footer } from '../components/footer.js';
 import { Titulo } from '../components/Titulo.js';
 //import dataset from '../data/dataset.js';
 import { sortData } from '../lib/dataFunctions.js';
-let datosFiltrados = data;
-//root.innerHTML = renderItems(data);
+let datosOrdenados = data;
+
 
 export const Home = () => {
     let selecVista = "";
@@ -43,12 +43,10 @@ export const Home = () => {
         container.appendChild(li)
        
     });
-    //console.log(elemento);
-    //return `<ul class="lista">${elemento}</ul>`;
-    //container.appendChild(Filtros());
-    //console.log(Filtros())
     
     
+    // CREACION DEL MENU DE FILTROS
+
       const filtroView = `
       
           <button class="abrir-menu" id="abrir-menu"><i class="bi bi-list"></i></button>
@@ -102,31 +100,34 @@ export const Home = () => {
       crearDivView.classList.add("contenedor1")
       crearDivView.innerHTML =  filtroView;
       
-
+//  ANEXAMOS EL TITULO, EL FOOTER Y EL MENU DE FILTROS
 
     container.appendChild(Titulo());
     container.appendChild(Footer());
     container.appendChild(crearDivView);
     
-    console.log(crearDivView)
+    
 
-    // FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
+    // LLAMADO PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
         const ordenar =  crearDivView.querySelector(`select[data-testid="select-sort"]`);
           console.log(ordenar)
 
             ordenar.addEventListener("change", (e) => {
             const opcion = e.target.value
-            sortData(datosFiltrados, "name" , opcion);
+            sortData(datosOrdenados, "name" , opcion);
+            console.log(datosOrdenados)
+            
+            //container.innerHTML = (datosOrdenados)
+            //console.log(container)
             
           });
 
-
-
-
+          
+        
     
  
-    return container;
+    return container 
 
     
 }

@@ -14,7 +14,7 @@ export const sortData = (data, sortBy, sortOrder) => {
       }
         
     })
-     console.log(dataset)
+     //console.log(dataset)
     //root.innerHTML = dataset(datosFiltrados);
     return dataset;
   

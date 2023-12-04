@@ -2,7 +2,7 @@ import { Home } from './views/home.js';
 import {Example} from './views/Example.js';
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
-
+import { vistaApi } from './views/apiVista.js';
 
 
 
@@ -11,6 +11,7 @@ const routes = {
     "/": Home,
     "/Example": Example,
     "/Error": Error,
+    "/ApiKey": vistaApi
 }
 
 setRoutes(routes);
@@ -22,7 +23,8 @@ setRootElement(document.getElementById("root"));
 window.addEventListener("DOMContentLoaded", (e) => {
     onURLChange(e.currentTarget.location.pathname);
     setRootElement(document.getElementById("root"));
-    console.log(e.currentTarget)
+    //console.log(e.currentTarget)
+    
 })
 
 

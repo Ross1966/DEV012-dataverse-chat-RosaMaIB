@@ -83,6 +83,52 @@ header{
 .classFooter{
     color: #FFFFFF;
 }
+
+.apiSection{
+    background-color: #8FCC73;
+    width: 50%;
+    height: 120px;
+    padding: 20px;
+    text-align: center;
+    margin: 200px 300px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 5px;
+    
+}
+.cajaApi{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.inputApi{
+    border-radius: 10px;
+    width: 50%;
+    height: 20px;
+    margin: 10px;
+}
+.botonApi{
+    border-radius: 100px;
+    width: 15%;
+    height: 20px;
+}
+.koala{
+    width: 18%;
+    height: 180px;
+    position:fixed;
+    margin-top: -140px;
+    margin-left: 150px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+
+
 p{
     color: rgb(0, 0, 0);
     font-size: 15px;
