@@ -51,20 +51,83 @@ header{
     width: 20%;
     height: 250px;
 }
+#tarjetaPrincipal{
+    display: flex;
+    width: 100%;
+    
+    
+}
+#contenedorInput{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    width: 37%;
+    height: 565px;
+    flex-direction: column;
+    border-radius: 20px;
+    border-style: groove;
+}
+#contenedorTexto{
+    text-align: end;
+    background-color: #8FCC73;
+    width: 94%;
+    height: 430px;
+    max-height: 430px;
+    overflow-y: auto;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #000000;
+}
+.textIndividual{
+    margin: 5px 15px;
+    background-color: rgb(241, 174, 208);
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+}
+#miInput{
+    width: 90%;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.botones{
+    display: flex;
+}
+#mostrarTexto{
+    background-color: black;
+    color:rgb(252, 252, 252);
+    border-radius: 50px;
+    border-color: rgb(252, 252, 252);
+    padding: 10px;
+    margin-top: 5px;
+}
+/*
+#borrarTexto{
+    background-color: black;
+    color:rgb(252, 252, 252);
+    border-radius: 50px;
+    border-color: rgb(252, 252, 252);
+    padding: 10px;
+    margin-top: 5px;
+    
+}
+*/
 
 #contenedorTarjeta{
     text-align: center;
     background-color:rgb(252, 252, 252);
-    width: 80%;
-    margin-left: 130px;
-    margin-right: 130px;
-    padding: 10px;
+    width: 60%;
+    height: 565px;
+    margin-left: 5px;
+    margin-right: 20px;
+    padding: 2px;
     border-radius: 20px;
     border-style: groove;
     
 }
 .imgIndividual{
-    width: 40%;
+    width: 70%;
     height: 300px;
     border-radius: 100px;
     margin-top: -18px;
@@ -72,7 +135,7 @@ header{
 }
 .imgParrafo{
     text-align: justify;
-    padding: 20px 100px 20px 100px;
+    padding: 20px 20px 20px 20px;
     color:#000000;
     font-size: 15px;
 }
@@ -83,6 +146,49 @@ header{
 .classFooter{
     color: #FFFFFF;
 }
+
+.apiSection{
+    background-color: #8FCC73;
+    width: 50%;
+    height: 120px;
+    padding: 20px;
+    text-align: center;
+    margin: 200px 300px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 5px;
+    
+}
+.cajaApi{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.inputApi{
+    border-radius: 10px;
+    width: 50%;
+    height: 20px;
+    margin: 10px;
+}
+.botonApi{
+    border-radius: 100px;
+    width: 15%;
+    height: 20px;
+}
+.koala{
+    width: 18%;
+    height: 180px;
+    position:fixed;
+    margin-top: -140px;
+    margin-left: 150px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 p{
     color: rgb(0, 0, 0);
     font-size: 15px;
