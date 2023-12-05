@@ -1,5 +1,11 @@
-export const Filtros = () =>{
-    const filtroView = `
+//import { sortData } from "../lib/dataFunctions";
+
+import { sortData } from "../lib/dataFunctions.js";
+
+export const Filtros = (clickFuncion) =>{
+ 
+  
+  const filtroView = `
     
         <button class="abrir-menu" id="abrir-menu"><i class="bi bi-list"></i></button>
         
@@ -41,7 +47,7 @@ export const Filtros = () =>{
           </select>
         
         
-          <button class="boton" data-testid="button-clear">Limpiar</button><br><br>
+          <button  id="prueba" class="boton" data-testid="button-clear">Limpiar</button><br><br>
         
           <p id="calcular"><span>Promedio de peso:</span><br>Animales carnívoros</p>
 
@@ -52,6 +58,35 @@ export const Filtros = () =>{
     const crearDivView = document.createElement("div");
     crearDivView.classList.add("contenedor1")
     crearDivView.innerHTML =  filtroView;
+     
+
+
+    // PRUEBA DE LA FUNCION  EN LA OFFICE HOUR
+    const nueva = crearDivView.querySelector("#prueba")
+    nueva.addEventListener("click" , function () {
+      console.log("Prueba")
+      clickFuncion()
+    })
+
+  //HASTa AQUI
+
+
+  const ordenar =  crearDivView.querySelector(`select[data-testid="select-sort"]`);
+  console.log(ordenar)
+
+    ordenar.addEventListener("change", (e) => {
+    const opcion = e.target.value
+    console.log(opcion)
+    
+    clickFuncion()
+  
+    //sortData(datosOrdenados, "name" , opcion);
+    //console.log(datosOrdenados)
+    
+    //container.innerHTML = (datosOrdenados)
+    //console.log(container)
+
+    });
 
     
     return crearDivView;

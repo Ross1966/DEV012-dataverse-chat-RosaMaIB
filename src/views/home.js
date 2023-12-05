@@ -1,53 +1,22 @@
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
 import { Footer } from '../components/footer.js';
-import { Titulo } from '../components/Titulo.js';
-//import dataset from '../data/dataset.js';
+import { renderItems } from '../components/Tarjeta.js';
 import { sortData } from '../lib/dataFunctions.js';
-let datosOrdenados = data;
+import { Titulo } from '../components/Titulo.js';
+//const root = document.querySelector("#root");
+let datosFiltrados = data;
+//root.innerHTML = renderItems;
 
 
 export const Home = () => {
-    let selecVista = "";
-    const container = document.createElement('ul');
-    container.classList.add("lista")
-    data.forEach((animal) => {
-      //<li itemscope itemtype="animal" class="box" id="imagen">
-        const li = document.createElement("li")
-        li.classList.add("box")
-        li.innerHTML=`
-        <dl id="${animal.id}">
-        <h2 class="id">${animal.name}</h2>
-        <img class="imgTarjetas" src="${animal.imageUrl}" alt="${animal.name}"/>
-        <dt>Nombre:</dt>
-        <dd itemprop ='name' class="parrafoBox">${animal.name}</dd>
-        <dt>Descripción:</dt> 
-        <dd itemprop ='' class="descripcion">${animal.shortDescription}</dd>
-        <dt>Peso en Kilos:</dt>
-        <dd itemprop ='' class="parrafoBox">${animal.facts.pesoEnKilos}</dd>
-        <dt>Años de Vida:</dt>
-        <dd itemprop ='' class="parrafoBox">${animal.facts.anosDeVida}</dd>
-        <dt>Hábitat:</dt>
-        <dd itemprop ='' class="parrafoBox">${animal.facts.tipoHabitad}</dd>
-        <dt>Dieta:</dt>
-        <dd itemprop ='' class="parrafoBox">${animal.facts.tipoDieta}</dd>
-        </dl>   
-      `;
-          const box = li.querySelector(`#${animal.id}`);
-          box.addEventListener("click", function() {
-            sessionStorage.selecVista = animal.id
-           
-             navigateTo('/Example','props')
-           
-        });
-        container.appendChild(li)
-       
-    });
     
+    const mainContainer = document.createElement('div')
+    let listaAnimales = document.createElement('section')  
+    const filtros = document.createElement('section')
+    let listadoAnimales = renderItems(datosFiltrados)
     
-    // CREACION DEL MENU DE FILTROS
-
-      const filtroView = `
+      filtros.innerHTML = `
       
           <button class="abrir-menu" id="abrir-menu"><i class="bi bi-list"></i></button>
           
@@ -95,40 +64,55 @@ export const Home = () => {
             <p id="calcularHabitad"><span>Porcentaje total Hábitat:</span><br>Selva</p>
       `;
       
-         
-      const crearDivView = document.createElement("div");
-      crearDivView.classList.add("contenedor1")
-      crearDivView.innerHTML =  filtroView;
-      
-//  ANEXAMOS EL TITULO, EL FOOTER Y EL MENU DE FILTROS
+        //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
-    container.appendChild(Titulo());
-    container.appendChild(Footer());
-    container.appendChild(crearDivView);
-    
-    
-
-    // LLAMADO PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
-
-        const ordenar =  crearDivView.querySelector(`select[data-testid="select-sort"]`);
+       /* const ordenar =  crearDivView.querySelector(`select[data-testid="select-sort"]`);
           console.log(ordenar)
 
             ordenar.addEventListener("change", (e) => {
-            const opcion = e.target.value
-            sortData(datosOrdenados, "name" , opcion);
-            console.log(datosOrdenados)
-            
-            //container.innerHTML = (datosOrdenados)
-            //console.log(container)
-            
-          });
+            const opcion = e.target.value;
+            datosFiltrados = sortData(datosFiltrados, "name" , opcion);
+            console.log(datosFiltrados)
+            //renderItems(container, datosFiltrados)
+            //container.innerHTML = datosFiltrados
+             const listaNueva = renderItems(datosFiltrados)
+             listaAnimales.replaceChild(listaNueva, listadoAnimales)
+             listadoAnimales = listaNueva
+          }); */
+     
+      
 
-          
-        
+
+    mainContainer.appendChild(Titulo());
+    mainContainer.appendChild(filtros)
+    mainContainer.appendChild(listaAnimales)
+    listaAnimales.appendChild(listadoAnimales)
+    mainContainer.appendChild(Footer());
+   
     
+    
+
+    
+
+  
  
-    return container 
+    return mainContainer;
 
     
 }
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
