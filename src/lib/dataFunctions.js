@@ -1,7 +1,7 @@
-import dataset from "../data/dataset.js";
+//import dataset from "../data/dataset.js";
 
 
-export const sortData = (data, sortBy, sortOrder) => {
+export const sortData = (dataset, sortBy, sortOrder) => {
     dataset.sort((a, b) => {
   
         if(sortOrder === "asc"){
