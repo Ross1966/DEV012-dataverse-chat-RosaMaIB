@@ -19,6 +19,13 @@ header{
     
 }
 */
+
+
+/*section{
+ background-color: gray;
+ display: flex;
+
+}*/
 .fondoError{
   background-color: #8FCC73;
   width: 101.3%;
@@ -189,6 +196,39 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
+.ulGrupal{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.listaGrupal{
+    align-items: center;
+}
+#contenedorGrupal{
+    margin: -10px;
+    background-color: #8FCC73;
+    width: 25%;
+    height: 30px;
+    border-radius: 60px;
+    
+}
+.imagenGrupal{
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+.nombreGrupal{
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
 p{
     color: rgb(0, 0, 0);
     font-size: 15px;
@@ -213,7 +253,7 @@ h1{
     position: fixed;
     top: -40px;
     width: 100%;
-    margin-left: -350px;
+    margin-left: 0px;
     text-align: center;
     
 }
@@ -234,7 +274,7 @@ h1{
     height: 400px;
     position: fixed;
     margin-top: 0px;
-    margin-left: -330px;
+    margin-left: 0px;
     
 }
 .lista{
@@ -308,7 +348,7 @@ footer{
     padding: 5px 0px 20px 0px;
     justify-content: center;
     border-radius: 30px;
-    margin-left: 70px;
+    margin-left: 360px;
     display: flex;
     flex-grow: 1;
     
