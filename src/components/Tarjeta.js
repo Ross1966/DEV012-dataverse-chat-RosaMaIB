@@ -1,7 +1,10 @@
 import data from "../data/dataset.js";
-export const renderItems =
-// document.createElement('ul');
+import { navigateTo } from "../router.js";
+
+export const renderItems = () => {
 //container.classList.add("lista")
+const container = document.createElement("ul")
+container.classList.add("lista")
 data.forEach((animal) => {
   //<li itemscope itemtype="animal" class="box" id="imagen">
     const li = document.createElement("li")
@@ -29,40 +32,7 @@ data.forEach((animal) => {
         sessionStorage.selecVista = animal.id
          navigateTo('/Example','props')
     });
-    //container.appendChild(li)
+    container.appendChild(li)
 });
-/*export const renderItems = (data) => {
-    let elemento = "";
-    data.forEach((animal) => {
-      elemento += `
-      
-       <li itemscope itemtype="animal" class="box">
-  
-       <dl>
-       <h2 class="id">${animal.name}</h2>
-       <img src="${animal.imageUrl}" alt=${animal.name}/>
-       <dt>Nombre:</dt>
-       <dd itemprop ='name' class="parrafoBox">${animal.name}</dd>
-       <dt>Descripción:</dt>
-       <dd itemprop ='' class="descripcion">${animal.shortDescription}</dd>
-       <dt>Peso en Kilos:</dt>
-       <dd itemprop ='' class="parrafoBox">${animal.facts.pesoEnKilos}</dd>
-       <dt>Años de Vida:</dt>
-       <dd itemprop ='' class="parrafoBox">${animal.facts.anosDeVida}</dd>
-       <dt>Habitad:</dt>
-       <dd itemprop ='' class="parrafoBox">${animal.facts.tipoHabitad}</dd>
-       <dt>Dieta:</dt>
-       <dd itemprop ='' class="parrafoBox">${animal.facts.tipoDieta}</dd>
-       </dl>
-       </li>
-      
-       
-     `;
-      //.join("");
-  
-      //console.log(data)
-  
-     
-    });
-    return `<ul class="lista">${elemento}</ul>`;
-  };*/
+  return container
+}

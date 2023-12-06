@@ -20,6 +20,19 @@ export const sortData = (dataset, sortBy, sortOrder) => {
     return dataset;
   
   };
+
+
+  // FUNCION PARA FILTRAR LA INFORMACION POR TIPO DE DIETA
+  export const filterDataByDiet = (data, filtrar) => {
+  let resultado = [];
+  if (filtrar === "") {
+    return null;
+  } else { 
+    resultado = data.filter((data) => data.facts.tipoDieta === filtrar);
+  //console.log(resultado)
+  }
+  return resultado
+}; 
   
 
 
