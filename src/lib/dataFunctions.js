@@ -15,8 +15,7 @@ export const sortData = (dataset, sortBy, sortOrder) => {
       }
         
     })
-     //console.log(dataset)
-    //root.innerHTML = dataset(datosFiltrados);
+     
     return dataset;
   
   };
@@ -29,10 +28,25 @@ export const sortData = (dataset, sortBy, sortOrder) => {
     return null;
   } else { 
     resultado = data.filter((data) => data.facts.tipoDieta === filtrar);
-  //console.log(resultado)
-  }
+   }
   return resultado
 }; 
+
+//FUNCION PARA FILTAR POR HABITAD
+
+export const filterDataByHabit = (data, filtrar) => {
+  let resultado = [];
+  const sinDatos =  [];
+  resultado = data.filter((data) => data.facts.tipoHabitad === filtrar);
+  if (resultado.length !== 0){
+    return resultado;
+  }else{
+    return sinDatos
+    
+    
+  }
+  
+};
   
 
 

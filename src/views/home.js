@@ -4,10 +4,11 @@ import { Footer } from '../components/footer.js';
 import { renderItems } from '../components/Tarjeta.js';
 import { filterDataByDiet, sortData } from '../lib/dataFunctions.js';
 import { Titulo } from '../components/Titulo.js';
-//const root = document.querySelector("#root");
+import { filterDataByHabit } from '../lib/dataFunctions.js';
+
 let datosFiltrados = data;
-let datosFiltradosDieta = data;
-//root.innerHTML = renderItems;
+let datosDietaFiltrados = datosFiltrados;
+
 
 
 export const Home = () => {
@@ -69,14 +70,14 @@ export const Home = () => {
       
         //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
-        const ordenar =  filtros.querySelector(`select[data-testid="select-sort"]`);
-          console.log(ordenar)
+        let ordenar =  filtros.querySelector(`select[data-testid="select-sort"]`);
+          //console.log(ordenar)
 
             ordenar.addEventListener("change", (e) => {
             const opcion = e.target.value;
             datosFiltrados = sortData(datosFiltrados, "name" , opcion);
              const listaNueva = renderItems(datosFiltrados)
-             console.log(listaNueva)
+             //console.log(listaNueva)
              listaAnimales.replaceChild(listaNueva, listadoAnimales)
              listadoAnimales = listaNueva
           }); 
@@ -84,19 +85,71 @@ export const Home = () => {
 
           //FUNCION PARA FILTRAR ANIMALES POR SU DIETA
 
-          const tipoDieta =  filtros.querySelector(`select[data-testid="select-filter"]`);
-          console.log(tipoDieta)
-     
+          let tipoDieta =  filtros.querySelector(`select[data-testid="select-filter"]`);
+          //console.log(tipoDieta)
+
+
             tipoDieta.addEventListener("change", (e) => {
               const dieta = e.target.value;
-              datosFiltradosDieta = filterDataByDiet(data, dieta);
-              console.log(datosFiltradosDieta)
-              const listaNuevaDieta = renderItems(datosFiltradosDieta)
-            console.log(listaNuevaDieta)
+              datosFiltrados = filterDataByDiet(data, dieta);
+              //console.log(datosFiltrados)
+              const listaNuevaDieta = renderItems(datosFiltrados)
+              //console.log(listaNuevaDieta)
               listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales)
-              console.log(listaAnimales)
+              //console.log(listaAnimales)
               listadoAnimales = listaNuevaDieta
             })
+
+
+           //FUNCION PARA FILTRAR POR HABITAT
+
+           /*const tipoHabitat = filtros.querySelector('[name="habitad"]');
+
+           tipoHabitat.addEventListener("change", (e) => {
+              const habitat = e.target.value;
+              datosDietaFiltrados = filterDataByHabit(datosFiltrados, habitat);
+              console.log(datosDietaFiltrados)
+              const listaNuevaHabitat = renderItems(datosDietaFiltrados)
+              listaAnimales.replaceChild(listaNuevaHabitat, listadoAnimales)
+              listadoAnimales = listaNuevaHabitat;
+              //arregloVacio()
+           })*/
+
+
+
+           // FUNCION CUANDO NO HAY CONTENIDO QUE MOSTRAR
+
+              /* function arregloVacio() {
+               let noHayDatos = `<p class="sinDatos">No Hay datos para mostrar</p>`
+              
+               const creaSinDatos = document.createElement("p");
+               //creaSinDatos.innerHTML = noHayDatos;
+             
+               const vacio = datosDietaFiltrados;
+                 if (vacio.length !== 0){
+                    creaSinDatos.innerHTML = "";
+                  }else{
+                    console.log("No hay datos")
+                     //creaSinDatos.innerHTML = noHayDatos
+                    // return creaSinDatos
+                      }
+
+               }*/
+
+
+               //BOTON LIMPIAR
+
+               const boton= filtros.querySelector('[data-testid="button-clear"]');
+               boton.addEventListener("click", function(){
+               
+               const regresar =renderItems(data)
+               console.log(regresar)
+               listaAnimales.replaceChild(regresar, listadoAnimales)
+               listadoAnimales = regresar
+               
+  
+               });
+
 
 
     const crearDivView = document.createElement("div");
