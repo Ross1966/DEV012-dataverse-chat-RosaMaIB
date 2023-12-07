@@ -1,7 +1,7 @@
 import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
 
-export const renderItems = () => {
+export const renderItems = (data) => {
 //container.classList.add("lista")
 const container = document.createElement("ul")
 container.classList.add("lista")

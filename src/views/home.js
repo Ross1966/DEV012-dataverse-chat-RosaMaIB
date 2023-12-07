@@ -1,12 +1,13 @@
+
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
 import { Footer } from '../components/footer.js';
-import { renderItems } from '../components/Tarjeta.js';
+import { renderItems } from '../components/tarjeta.js';
 import { filterDataByDiet, sortData } from '../lib/dataFunctions.js';
 import { Titulo } from '../components/Titulo.js';
 //const root = document.querySelector("#root");
 let datosFiltrados = data;
-let datosFiltradosDieta = data;
+let datosFiltradosDieta = datosFiltrados;
 //root.innerHTML = renderItems;
 
 
@@ -61,10 +62,9 @@ export const Home = () => {
           
           
             <button class="boton" data-testid="button-clear">Limpiar</button><br><br>
-          
-            <p id="calcular"><span>Promedio de peso:</span><br>Animales carnívoros</p>
-  
-            <p id="calcularHabitad"><span>Porcentaje total Hábitat:</span><br>Selva</p>
+
+            <button id="chatGrupo">Chat Grupal</button>
+            <button id="api">Api Key</button>
       `;
       
         //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
@@ -89,13 +89,23 @@ export const Home = () => {
      
             tipoDieta.addEventListener("change", (e) => {
               const dieta = e.target.value;
-              datosFiltradosDieta = filterDataByDiet(data, dieta);
-              console.log(datosFiltradosDieta)
-              const listaNuevaDieta = renderItems(datosFiltradosDieta)
-            console.log(listaNuevaDieta)
+              datosFiltrados = filterDataByDiet(data, dieta);
+
+              
+              
+              const listaNuevaDieta= renderItems(datosFiltrados)
               listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales)
-              console.log(listaAnimales)
+              
               listadoAnimales = listaNuevaDieta
+              
+              
+
+            })
+
+
+            const chatGrupo = filtros.querySelector("#chatGrupo")
+            chatGrupo.addEventListener("click", function(){
+              console.log("Hola soy el BOTÓN CHAT GRUPAL")
             })
 
 
@@ -121,19 +131,6 @@ export const Home = () => {
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
