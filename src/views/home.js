@@ -90,19 +90,13 @@ export const Home = () => {
             tipoDieta.addEventListener("change", (e) => {
               const dieta = e.target.value;
               datosFiltrados = filterDataByDiet(data, dieta);
-              renderItems(datosFiltrados)
 
               
-              listaAnimales.innerHTML=""
-              listaAnimales.appendChild(renderItems(datosFiltrados))
-              //datosFiltradosDieta = listadoAnimales
               
-              console.log(datosFiltrados)
-              //const listaNuevaDieta = renderItems(datosFiltradosDieta)
-            //console.log(listaNuevaDieta)
-              //listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales)
-              //console.log(listaAnimales)
-              //listadoAnimales = listaNuevaDieta
+              const listaNuevaDieta= renderItems(datosFiltrados)
+              listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales)
+              
+              listadoAnimales = listaNuevaDieta
               
               
 

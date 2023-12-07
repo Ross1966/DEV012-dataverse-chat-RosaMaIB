@@ -2,6 +2,8 @@ import { getElementById } from "../lib/apiData.js";
 import dataset from "../data/dataset.js";
 
 export const chatGrupal = () =>{
+    const contenedorPrincipal = document.createElement("div")
+    contenedorPrincipal.classList.add("contenedorPrincipal")
     const resultadoLista = document.createElement("ul")
     resultadoLista.classList.add("ulGrupal")
     
@@ -18,5 +20,70 @@ export const chatGrupal = () =>{
     resultadoLista.appendChild(li)
     })
    
-    return resultadoLista;
+ 
+//export const grupoDeChat = () =>{
+        const chat = `
+        <div id="contenedorInputGrupal">
+        <div id="contenedorTextoGrupal"></div>
+        <input type="text" id="miInputGrupal" placeholder="Escribe algo...">
+        <div class="botones">
+        <button id="mostrarTexto">Enviar</button>
+        </div>
+        
+    `
+    const contenedorChat = document.createElement("div");
+    contenedorChat.classList.add("contenedorChat")
+    contenedorChat.innerHTML = chat;
+    contenedorPrincipal.appendChild(resultadoLista);
+    contenedorPrincipal.appendChild(contenedorChat)
+console.log(contenedorChat)
+
+     ///CHAT GRUPAL
+
+     const mostrarTexto = contenedorPrincipal.querySelector("#mostrarTexto");
+     const miInput = contenedorPrincipal.querySelector("#miInputGrupal");
+     const contenedorTexto = contenedorPrincipal.querySelector("#contenedorTextoGrupal");
+     //const borrarTexto = result.querySelector("#borrarTexto");
+     //<button id="borrarTexto">Limpiar</button>
+     console.log(mostrarTexto)
+     let historialText = []
+ 
+     mostrarTexto.addEventListener("click", function() {
+         enviarTexto();
+     })
+ 
+     miInput.addEventListener("keydown", function(e) {
+         // Verificar si la tecla presionada es "Enter"
+         if (e.key === "Enter") {
+             e.preventDefault(); // Evitar el comportamiento predeterminado del "Enter" en un campo de texto (como agregar una nueva línea)
+             enviarTexto();
+         }
+     });
+ 
+     function enviarTexto() {
+         let texto = miInput.value;
+         historialText.push(texto);
+ 
+         miInput.value = ""
+         console.log("SOY EL ADDEVENT LISTENER");
+ 
+         mostrarHistorial()
+     };
+     
+     function mostrarHistorial() {
+         let contenedor = contenedorTexto;
+         contenedor.innerHTML = "";
+         historialText.forEach(function(texto) {
+         let nuevoDiv = document.createElement("div");
+         nuevoDiv.classList.add("textIndividual");
+         let nuevoParrafo = document.createElement("p");
+         nuevoParrafo.innerText = texto;
+         nuevoDiv.appendChild(nuevoParrafo);
+         contenedor.appendChild(nuevoDiv);
+         });
+     }
+ 
+  
+return contenedorPrincipal;
 }
+
