@@ -1,8 +1,6 @@
 import dataset from "../data/dataset.js";
-import { Titulo } from "../components/Titulo.js";
-import { Footer } from "../components/footer.js";
-import { sortData } from "./dataFunctions.js";
 import { navigateTo } from "../router.js";
+import { vistaApi } from "../views/apiVista.js";
 
 
 // TRAER EL ID
@@ -12,6 +10,9 @@ const result = dataset.find( function(element) {
 })
 return result;
 }
+
+
+
 
 
 

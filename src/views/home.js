@@ -1,13 +1,16 @@
+
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
 import { Footer } from '../components/footer.js';
-import { renderItems } from '../components/Tarjeta.js';
+import { renderItems } from '../components/tarjeta.js';
 import { filterDataByDiet, sortData } from '../lib/dataFunctions.js';
 import { Titulo } from '../components/Titulo.js';
-import { filterDataByHabit } from '../lib/dataFunctions.js';
+//import { filterDataByHabit } from '../lib/dataFunctions.js';
+
 
 let datosFiltrados = data;
-let datosDietaFiltrados = datosFiltrados;
+
+
 
 
 
@@ -45,27 +48,13 @@ export const Home = () => {
             </select>
   
   
-            <label>Hábitat:</label> 
-            <select name="habitad">
-              <option value="" disabled selected>--Elige una Opción--</option>
-              <option value="Bosque">Bosque</option>
-              <option value="Granja">Granja</option>
-              <option value="Campo">Campo</option>
-              <option value="Hogar">Hogar</option>
-              <option value="Cueva">Cueva</option>
-              <option value="Selva">Selva</option>
-              <option value="Jardín">Jardín</option>
-              <option value="Sabana Africana">Sabana Africana</option>
-              <option value="Montaña">Montaña</option>
-              <option value="Desierto">Desierto</option>
-            </select>
+           
           
           
             <button class="boton" data-testid="button-clear">Limpiar</button><br><br>
-          
-            <p id="calcular"><span>Promedio de peso:</span><br>Animales carnívoros</p>
-  
-            <p id="calcularHabitad"><span>Porcentaje total Hábitat:</span><br>Selva</p>
+
+            <button id="chatGrupo">Chat Grupal</button>
+            <button id="api">Api Key</button>
       `;
       
         //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
@@ -98,57 +87,47 @@ export const Home = () => {
               listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales)
               //console.log(listaAnimales)
               listadoAnimales = listaNuevaDieta
+              
+              
+
+            })
+
+              //BOTON LIMPIAR
+
+              const boton= filtros.querySelector('[data-testid="button-clear"]');
+              boton.addEventListener("click", function(){
+              tipoDieta.value = ""
+              ordenar.value = ""
+              const regresar =renderItems(data)
+              console.log(regresar)
+              listaAnimales.replaceChild(regresar, listadoAnimales)
+              listadoAnimales = regresar
+
+
+              });
+
+             //BOTON CHAT GRUPAL
+
+            const chatGrupo = filtros.querySelector("#chatGrupo")
+            chatGrupo.addEventListener("click", function(){
+              console.log("Hola soy el BOTÓN CHAT GRUPAL")
+              navigateTo('/chatGrupal','props')
             })
 
 
-           //FUNCION PARA FILTRAR POR HABITAT
+            //BOTON APIKEY
 
-           /*const tipoHabitat = filtros.querySelector('[name="habitad"]');
-
-           tipoHabitat.addEventListener("change", (e) => {
-              const habitat = e.target.value;
-              datosDietaFiltrados = filterDataByHabit(datosFiltrados, habitat);
-              console.log(datosDietaFiltrados)
-              const listaNuevaHabitat = renderItems(datosDietaFiltrados)
-              listaAnimales.replaceChild(listaNuevaHabitat, listadoAnimales)
-              listadoAnimales = listaNuevaHabitat;
-              //arregloVacio()
-           })*/
+            const api = filtros.querySelector('#api')
+            api.addEventListener("click", function () {
+              navigateTo('/ApiKey', 'props')
+            })
 
 
-
-           // FUNCION CUANDO NO HAY CONTENIDO QUE MOSTRAR
-
-              /* function arregloVacio() {
-               let noHayDatos = `<p class="sinDatos">No Hay datos para mostrar</p>`
-              
-               const creaSinDatos = document.createElement("p");
-               //creaSinDatos.innerHTML = noHayDatos;
-             
-               const vacio = datosDietaFiltrados;
-                 if (vacio.length !== 0){
-                    creaSinDatos.innerHTML = "";
-                  }else{
-                    console.log("No hay datos")
-                     //creaSinDatos.innerHTML = noHayDatos
-                    // return creaSinDatos
-                      }
-
-               }*/
+        
+           
 
 
-               //BOTON LIMPIAR
-
-               const boton= filtros.querySelector('[data-testid="button-clear"]');
-               boton.addEventListener("click", function(){
                
-               const regresar =renderItems(data)
-               console.log(regresar)
-               listaAnimales.replaceChild(regresar, listadoAnimales)
-               listadoAnimales = regresar
-               
-  
-               });
 
 
 
@@ -174,19 +153,6 @@ export const Home = () => {
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

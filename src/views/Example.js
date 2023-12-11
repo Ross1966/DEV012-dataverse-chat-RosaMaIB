@@ -1,5 +1,8 @@
 
 import { getElementById } from "../lib/apiData.js";
+import { getCompletion, iniciarChat, agregarMensajeIA, agregarMensajesUsuario} from "../lib/openIAapi.js";
+import { navigateTo } from "../router.js";
+import { vistaApi } from "./apiVista.js";
 //import { navigateTo } from "../router.js";
 
 
@@ -12,6 +15,7 @@ export const Example = () => {
     const vistaHtml =  `
     <div id="tarjetaPrincipal">
     <div id="contenedorTarjeta">
+    <button id="home">Home</button>
     <h2 class="tituloId">${animal.name}</h2>
     <img class="imgIndividual" src="${animal.imageUrl}">
     <p class="imgParrafo">${animal.description}</p>
@@ -32,6 +36,14 @@ export const Example = () => {
     
     result.innerHTML = (vistaHtml);
 
+  //BOTON HOME
+
+  const home = result.querySelector("#home");
+    home.addEventListener("click", function() {
+        navigateTo('/', 'props')
+    })
+
+
 
     ///CHAT INDIVIDUAL
 
@@ -41,7 +53,8 @@ export const Example = () => {
     //const borrarTexto = result.querySelector("#borrarTexto");
     //<button id="borrarTexto">Limpiar</button>
 
-    let historialText = []
+    let historialText = iniciarChat(animal.name);
+     //mostrarHistorial()
 
     mostrarTexto.addEventListener("click", function() {
         enviarTexto();
@@ -57,35 +70,53 @@ export const Example = () => {
 
     function enviarTexto() {
         let texto = miInput.value;
-        historialText.push(texto);
+        agregarMensajesUsuario(texto);
+        const keyUsuario = localStorage.getItem("Api ingresada")
+        getCompletion(keyUsuario, historialText).then((respuesta) => {
+            console.log(respuesta)
+            agregarMensajeIA(respuesta.choices[0].message.content)
+            miInput.value = ""
+            //console.log("SOY EL ADDEVENT LISTENER");
 
-        miInput.value = ""
-        console.log("SOY EL ADDEVENT LISTENER");
+              mostrarHistorial()
 
-        mostrarHistorial()
+
+        })
+           console.log(historialText) 
     };
     
     function mostrarHistorial() {
         let contenedor = contenedorTexto;
         contenedor.innerHTML = "";
-        historialText.forEach(function(texto) {
+        historialText.forEach(function(mensaje) {
         let nuevoDiv = document.createElement("div");
         nuevoDiv.classList.add("textIndividual");
         let nuevoParrafo = document.createElement("p");
-        nuevoParrafo.innerText = texto;
+        nuevoParrafo.innerText = mensaje.content;
         nuevoDiv.appendChild(nuevoParrafo);
         contenedor.appendChild(nuevoDiv);
         });
     }
 
-    /*
-    borrarTexto.addEventListener("click", function(){
-        contenedorTexto.innerHTML = "";
-        
-        console.log("Estas dentro del boton BORRAR")
-    })
-    */ 
-        
+  
+
+
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+
+
     return result;
    
    
