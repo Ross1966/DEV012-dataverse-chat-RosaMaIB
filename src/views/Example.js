@@ -1,6 +1,8 @@
-
 import { getElementById } from "../lib/apiData.js";
-
+import { getCompletion, iniciarChat, agregarMensajeIA, agregarMensajesUsuario} from "../lib/openIAapi.js";
+import { navigateTo } from "../router.js";
+import { vistaApi } from "./apiVista.js";
+//import { navigateTo } from "../router.js";
 export const Example = () => {
     const result = document.createElement('p');
     let traerId = sessionStorage.getItem(`selecVista`)
@@ -8,11 +10,11 @@ export const Example = () => {
     const vistaHtml =  `
     <div id="tarjetaPrincipal">
     <div id="contenedorTarjeta">
+    <button id="home">Home</button>
     <h2 class="tituloId">${animal.name}</h2>
     <img class="imgIndividual" src="${animal.imageUrl}">
     <p class="imgParrafo">${animal.description}</p>
     </div>
-
     <div id="contenedorInput">
     <br>
     <div id="contenedorTexto"></div>
@@ -20,93 +22,67 @@ export const Example = () => {
     <input type="text" id="miInput" placeholder="Escribe algo...">
     <div class="botones">
     <button id="mostrarTexto">Enviar</button>
-    
     </div>
     </div>
     </div>
     `
-    
-    result.innerHTML = vistaHtml;
-
+    result.innerHTML = (vistaHtml);
+  //BOTON HOME
+  const home = result.querySelector("#home");
+    home.addEventListener("click", function() {
+        navigateTo('/', 'props')
+    })
+    ///CHAT INDIVIDUAL
     const mostrarTexto = result.querySelector("#mostrarTexto");
     const miInput = result.querySelector("#miInput");
     const contenedorTexto = result.querySelector("#contenedorTexto");
-
-    let historialText = [];
-
+    //const borrarTexto = result.querySelector("#borrarTexto");
+    //<button id="borrarTexto">Limpiar</button>
+    let historialText = iniciarChat(animal.name);
+     //mostrarHistorial()
     mostrarTexto.addEventListener("click", function() {
         enviarTexto();
-    });
-
+    })
     miInput.addEventListener("keydown", function(e) {
+        // Verificar si la tecla presionada es "Enter"
         if (e.key === "Enter") {
-            e.preventDefault();
+            e.preventDefault(); // Evitar el comportamiento predeterminado del "Enter" en un campo de texto (como agregar una nueva línea)
             enviarTexto();
         }
     });
-
     function enviarTexto() {
         let texto = miInput.value;
-        historialText.push(texto);
-
-        miInput.value = "";
-        mostrarHistorial();
-
-       /////
-    }
-    
+        agregarMensajesUsuario(texto);
+        const keyUsuario = localStorage.getItem("Api_Ingresada")
+        getCompletion(keyUsuario, historialText).then((respuesta) => {
+            console.log(respuesta)
+            agregarMensajeIA(respuesta.choices[0].message.content)
+            miInput.value = ""
+            //console.log("SOY EL ADDEVENT LISTENER");
+              mostrarHistorial()
+        })
+           console.log(historialText)
+    };
     function mostrarHistorial() {
         let contenedor = contenedorTexto;
         contenedor.innerHTML = "";
-        historialText.forEach(function(texto) {
-            let nuevoDiv = document.createElement("div");
-            nuevoDiv.classList.add("textIndividual");
-            let nuevoParrafo = document.createElement("p");
-            nuevoParrafo.innerText = texto;
-            nuevoDiv.appendChild(nuevoParrafo);
-            contenedor.appendChild(nuevoDiv);
+        historialText.forEach(function(mensaje) {
+        let nuevoDiv = document.createElement("div");
+        nuevoDiv.classList.add("textIndividual");
+        let nuevoParrafo = document.createElement("p");
+        nuevoParrafo.innerText = mensaje.content;
+        nuevoDiv.appendChild(nuevoParrafo);
+        contenedor.appendChild(nuevoDiv);
         });
     }
-    
-    function getCompletion() {
-        const apiKey = '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';
-
-        return fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + apiKey,
-            },
-            
-            body:JSON.stringify({
-                model: 'gpt-3.5-turbo',
-                 messages: [
-                {
-                  "role": "system",
-                  "content": "Eres un Oso"
-                },
-                {
-                  "role": "user",
-                  "content": "Hola, que eres"
-                },
-              ],
-                //max_tokens: 100,
-                //temperature: 0.9,
-            })
-           
-           /* 
-            body: JSON.stringify({
-                model: 'gpt-3.5-turbo-instruct',
-                prompt: "¿Cuantas razas de perros existen en latinoamerica?",//prompt,
-                
-            })
-            */
-            
-        }).then(res => res.json()).catch(error => console.log("Error:", error));
-    
-    }
-    console.log(getCompletion())
-    
     return result;
 }
+
+
+
+
+
+
+
+
 

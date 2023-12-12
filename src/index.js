@@ -19,34 +19,7 @@ const routes = {
 setRoutes(routes);
 setRootElement(document.getElementById("root"));
 
-/*function encabezado() {
-    const section2= document.createElement("section")
-    section2.appendChild(Titulo())
-    document.body.appendChild(section2);
-}
-*/
-/*
- const mostrarTexto = result.querySelector("#mostrarTexto");
-    const miInput = result.querySelector("#miInput");
-    const resultado = result.querySelector("#resultado");
 
-    let historialText = []
-
-    mostrarTexto.addEventListener("click", function() {
-        let texto = miInput.value;
-        resultado.innerHTML = texto;
-        console.log("SOY EL ADDEVENT LISTENER");
-    });
-*/
-/*
-function init() {
-    
-    const section1= document.createElement("section")
-    section1.appendChild(Footer())
-    document.body.appendChild(section1);
-  }
-  init();
-  */
 
   
 

@@ -20,7 +20,11 @@ header{
 }
 */
 
-
+.sinDatos{
+    color: #d41010;
+    size: 40%;
+    margin-left: 90px;
+}
 /*section{
  background-color: gray;
  display: flex;
