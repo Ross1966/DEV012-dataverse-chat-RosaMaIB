@@ -43,22 +43,7 @@ export const Home = () => {
               <option value="Carnívoro">Carnívoros</option>
               <option value="Herbívoro">Hervívoros</option>
             </select>
-  
-  
-            <label>Hábitat:</label> 
-            <select name="habitad">
-              <option value="" disabled selected>--Elige una Opción--</option>
-              <option value="Bosque">Bosque</option>
-              <option value="Granja">Granja</option>
-              <option value="Campo">Campo</option>
-              <option value="Hogar">Hogar</option>
-              <option value="Cueva">Cueva</option>
-              <option value="Selva">Selva</option>
-              <option value="Jardín">Jardín</option>
-              <option value="Sabana Africana">Sabana Africana</option>
-              <option value="Montaña">Montaña</option>
-              <option value="Desierto">Desierto</option>
-            </select>
+
           
           
             <button class="boton" data-testid="button-clear">Limpiar</button><br><br>
@@ -101,11 +86,26 @@ export const Home = () => {
               
 
             })
+            //BOTON LIMPIAR
 
+            const boton= filtros.querySelector('[data-testid="button-clear"]');
+            boton.addEventListener("click", function(){
+              ordenar.selectedIndex = 0;
+              tipoDieta.value = ""
+              
+            const regresar =renderItems(data)
+            console.log(regresar)
+            listaAnimales.replaceChild(regresar, listadoAnimales)
+            listadoAnimales = regresar
+            
 
+            });
+
+            //BOTON CHAT GRUPAL
             const chatGrupo = filtros.querySelector("#chatGrupo")
             chatGrupo.addEventListener("click", function(){
               console.log("Hola soy el BOTÓN CHAT GRUPAL")
+              navigateTo("/ApiKey", "props")
             })
 
 

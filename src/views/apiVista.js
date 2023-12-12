@@ -4,7 +4,7 @@ export const vistaApi = () =>{
         <div class="cajaApi">
             <label for="">Ingresa aquí tu número ApiKey:</label>
             <br>
-            <input class="inputApi" type="number" placeholder="API KEY"></input>
+            <input class="inputApi" placeholder="API KEY"></input>
             <br>
             <button class="botonApi">Entrar</button>
             <br>

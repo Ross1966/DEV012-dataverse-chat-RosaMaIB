@@ -81,6 +81,7 @@ console.log(contenedorChat)
          nuevoDiv.appendChild(nuevoParrafo);
          contenedor.appendChild(nuevoDiv);
          });
+         contenedor.scrollTop = contenedor.scrollHeight;
      }
  
   

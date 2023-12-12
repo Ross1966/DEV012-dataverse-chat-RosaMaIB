@@ -1,9 +1,5 @@
 
 import { getElementById } from "../lib/apiData.js";
-//import { navigateTo } from "../router.js";
-
-
-
 
 export const Example = () => {
     const result = document.createElement('p');
@@ -30,27 +26,21 @@ export const Example = () => {
     </div>
     `
     
-    result.innerHTML = (vistaHtml);
-
-
-    ///CHAT INDIVIDUAL
+    result.innerHTML = vistaHtml;
 
     const mostrarTexto = result.querySelector("#mostrarTexto");
     const miInput = result.querySelector("#miInput");
     const contenedorTexto = result.querySelector("#contenedorTexto");
-    //const borrarTexto = result.querySelector("#borrarTexto");
-    //<button id="borrarTexto">Limpiar</button>
 
-    let historialText = []
+    let historialText = [];
 
     mostrarTexto.addEventListener("click", function() {
         enviarTexto();
-    })
+    });
 
     miInput.addEventListener("keydown", function(e) {
-        // Verificar si la tecla presionada es "Enter"
         if (e.key === "Enter") {
-            e.preventDefault(); // Evitar el comportamiento predeterminado del "Enter" en un campo de texto (como agregar una nueva línea)
+            e.preventDefault();
             enviarTexto();
         }
     });
@@ -59,35 +49,64 @@ export const Example = () => {
         let texto = miInput.value;
         historialText.push(texto);
 
-        miInput.value = ""
-        console.log("SOY EL ADDEVENT LISTENER");
+        miInput.value = "";
+        mostrarHistorial();
 
-        mostrarHistorial()
-    };
+       /////
+    }
     
     function mostrarHistorial() {
         let contenedor = contenedorTexto;
         contenedor.innerHTML = "";
         historialText.forEach(function(texto) {
-        let nuevoDiv = document.createElement("div");
-        nuevoDiv.classList.add("textIndividual");
-        let nuevoParrafo = document.createElement("p");
-        nuevoParrafo.innerText = texto;
-        nuevoDiv.appendChild(nuevoParrafo);
-        contenedor.appendChild(nuevoDiv);
+            let nuevoDiv = document.createElement("div");
+            nuevoDiv.classList.add("textIndividual");
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.innerText = texto;
+            nuevoDiv.appendChild(nuevoParrafo);
+            contenedor.appendChild(nuevoDiv);
         });
     }
+    
+    function getCompletion() {
+        const apiKey = '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';
 
-    /*
-    borrarTexto.addEventListener("click", function(){
-        contenedorTexto.innerHTML = "";
-        
-        console.log("Estas dentro del boton BORRAR")
-    })
-    */ 
-        
+        return fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + apiKey,
+            },
+            
+            body:JSON.stringify({
+                model: 'gpt-3.5-turbo',
+                 messages: [
+                {
+                  "role": "system",
+                  "content": "Eres un Oso"
+                },
+                {
+                  "role": "user",
+                  "content": "Hola, que eres"
+                },
+              ],
+                //max_tokens: 100,
+                //temperature: 0.9,
+            })
+           
+           /* 
+            body: JSON.stringify({
+                model: 'gpt-3.5-turbo-instruct',
+                prompt: "¿Cuantas razas de perros existen en latinoamerica?",//prompt,
+                
+            })
+            */
+            
+        }).then(res => res.json()).catch(error => console.log("Error:", error));
+    
+    }
+    console.log(getCompletion())
+    
     return result;
-   
-   
 }
 
