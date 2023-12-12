@@ -20,6 +20,40 @@ header{
 }
 */
 
+#home, #home2{
+
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 30px ;
+    top: 33px;
+    border-radius: 50%;
+    background-color:gold;
+
+}
+
+#botonHome{
+   
+    width: 35px;
+    height: 35px;
+}
+
+#api{
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    border-radius: 50px;
+    background-color: gold;
+}
+
+#chatGrupo{
+     padding-top: 10px;
+     padding-bottom: 10px;
+     margin-bottom: 20px;
+     border-radius: 50px;
+     background-color: gold;
+}
+
+
 .sinDatos{
     color: #d41010;
     size: 40%;

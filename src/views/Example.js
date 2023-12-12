@@ -15,7 +15,9 @@ export const Example = () => {
     const vistaHtml =  `
     <div id="tarjetaPrincipal">
     <div id="contenedorTarjeta">
-    <button id="home">Home</button>
+    <button id="home">
+    <img  id="botonHome" src="../img/BotonHome.png">
+    </button>
     <h2 class="tituloId">${animal.name}</h2>
     <img class="imgIndividual" src="${animal.imageUrl}">
     <p class="imgParrafo">${animal.description}</p>
@@ -71,7 +73,7 @@ export const Example = () => {
     function enviarTexto() {
         let texto = miInput.value;
         agregarMensajesUsuario(texto);
-        const keyUsuario = localStorage.getItem("Api ingresada")
+        const keyUsuario = localStorage.getItem("Api_Ingresada")
         getCompletion(keyUsuario, historialText).then((respuesta) => {
             console.log(respuesta)
             agregarMensajeIA(respuesta.choices[0].message.content)

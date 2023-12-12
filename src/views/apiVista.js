@@ -3,7 +3,9 @@ import { navigateTo } from "../router.js";
 export const vistaApi = () =>{
     const apiHtml = `
     
-    <button id="home2">Home</button>
+    <button id="home2">
+    <img  id="botonHome" src="../img/BotonHome.png">
+    </button>
       
         <div class="cajaApi">
             <label for="">Ingresa aquí tu número ApiKey:</label>
@@ -45,7 +47,7 @@ export const vistaApi = () =>{
 
          const entrada = apiView.querySelector('#entrada').value;
          
-         const password = localStorage.setItem("Api ingresada", entrada)
+         const password = localStorage.setItem("Api_Ingresada", entrada)
 
           
           

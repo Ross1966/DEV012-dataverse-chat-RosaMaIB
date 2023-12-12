@@ -26,7 +26,6 @@ export function iniciarChat(nombre){
 }
 
 export function getCompletion(apiKey, historial) {
-    //const apiKey = localStorage.getItem("Api ingresada") //'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';
     
     return fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
