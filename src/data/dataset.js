@@ -188,7 +188,7 @@ export default [
   //ANIMALES CARNÍVOROS
   {
     "id": "leon",
-    "name": "Leon",
+    "name": "León",
     "shortDescription": "Un mamífero carnívoro de gran tamaño y fuerza.",
     "description": "El león es un majestuoso y poderoso felino, conocido como el rey de la selva. Con un imponente porte y una melena que le otorga un aspecto imponente, es fácil reconocerlo en la naturaleza. Su cuerpo es robusto y musculoso, adaptado para la caza y la defensa de su territorio. Sus garras afiladas le permiten sujetar presas y desgarrar carne con facilidad. Con una mirada intensa y ojos amarillos, el león transmite autoridad y dominio. Su rugido es reconocible y resonante, utilizado para marcar territorio y comunicarse con otros de su especie.",
     "imageUrl": "https://static.nationalgeographic.es/files/styles/image_3200/public/01-lion-populations-nationalgeographic_1777804.jpg?w=1600&h=900",
@@ -201,7 +201,7 @@ export default [
   },
   {
     "id": "tigre",
-    "name": "tigre",
+    "name": "Tigre",
     "shortDescription": "El tigre siberiano es la subespecie más grande de tigre y se encuentra en el este de Rusia.",
     "description": "El tigre es un felino de tamaño mediano, con un cuerpo ágil y esbelto. Su pelaje puede variar en colores y patrones, desde el clásico atigrado hasta colores sólidos como el negro o el blanco. Sus grandes ojos expresivos, generalmente en tonos verdes o amarillos, resaltan en su rostro triangular. Posee orejas puntiagudas y una cola larga y elegante. Habita en regiones frías del este de Rusia y China.  son fuente de admiración e inspiración para muchos. Pero a pesar de ser tan venerados, también son vulnerables a la extinción.",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Panthera_tigris_corbetti_%28Tierpark_Berlin%29_832-714-%28118%29.jpg/220px-Panthera_tigris_corbetti_%28Tierpark_Berlin%29_832-714-%28118%29.jpg",
@@ -214,7 +214,7 @@ export default [
   },
   {
     "id": "lobo",
-    "name": "lobo",
+    "name": "Lobo",
     "shortDescription": "Mamífero carnívoro de la familia Canidae",
     "description": "El lobo es una especie de mamífero carnívoro perteneciente la familia de los cánidos. Posee un cuerpo robusto y musculoso, con patas fuertes y garras afiladas. Su pelaje es espeso y está compuesto por diferentes tonalidades de gris, negro y marrón, lo que le permite camuflarse en su hábitat natural. Sus ojos amarillos y penetrantes reflejan su inteligencia y astucia. Además, posee una mandíbula potente con dientes afilados, ideales para cazar y desgarrar la carne de sus presas. Es considerado un animal social, que vive en manadas lideradas por una pareja de alfa.",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Front_view_of_a_resting_Canis_lupus_ssp.jpg/220px-Front_view_of_a_resting_Canis_lupus_ssp.jpg",
@@ -227,7 +227,7 @@ export default [
   },
   {
     "id": "hiena",
-    "name": "hiena",
+    "name": "Hiena",
     "shortDescription": "Mamífero del orden de los carnívoros, de 100 a 160 cm de largo y aspecto algo similar a un perro.",
     "description": "La hiena es un mamífero carnívoro que se encuentra principalmente en África y algunas partes de Asia. Es conocida por su apariencia distintiva, con un cuerpo robusto, patas traseras más cortas que las delanteras y una cabeza grande en comparación con su tamaño. Su pelaje es grueso y áspero, generalmente de color marrón o grisáceo, con manchas oscuras en forma de manchas o rayas. Las hienas son famosas por su risa característica, que suena como una risa humana, y su mandíbula potente, adaptada para romper huesos. Son animales sociales que viven en grupos llamados clanes.",
     "imageUrl": "https://static9.depositphotos.com/1000393/1184/i/450/depositphotos_11849539-stock-photo-spotted-hyena.jpg",
@@ -240,7 +240,7 @@ export default [
   },
   {
     "id": "aguila",
-    "name": "Aguila",
+    "name": "Águila",
     "shortDescription": " Las águilas se caracterizan principalmente por su gran tamaño, complexión robusta, cabeza y pico pesados..",
     "description": "El águila, majestuosa ave rapaz, es conocida por su imponente envergadura y su aguda visión. Con un plumaje oscuro y robusto, posee un característico cuello corto y cabeza grande. Sus poderosas alas le permiten volar a altas velocidades, alcanzando alturas impresionantes mientras busca su presa. Sus garras afiladas son un arma letal, capaces de atrapar y sujetar a su presa con fuerza. Su mirada penetrante, adornada por un pico curvado y poderoso, refleja su agilidad y determinación para cazar. El águila personifica la fuerza, la libertad y el poderío, siendo considerada un símbolo de la grandeza y la nobleza.",
     "imageUrl": "https://okdiario.com/img/2019/09/30/richard-lee-f12btzeevyk-unsplash111.jpg",
@@ -293,7 +293,7 @@ export default [
   },
   {
     "id": "bufalo",
-    "name": "Bufalo",
+    "name": "Búfalo",
     "shortDescription": "Los búfalos son unos bóvidos de gran tamaño procedentes principalmente de la zona del sudeste asiático.",
     "description": "El búfalo, también conocido como bisonte, es un imponente mamífero que se encuentra principalmente en el continente americano. Destaca por su cuerpo robusto y musculoso, que puede alcanzar hasta los 2 metros de altura y pesar más de 900 kilogramos. Posee una cabeza grande con cuernos en forma de C, lo que le proporciona no solo fuerza y defensa, sino también una apariencia majestuosa. Su pelaje es espeso y áspero, de color marrón oscuro, adaptándose perfectamente a los climas fríos de las praderas, donde suele habitar en manadas. El búfalo es un símbolo de resistencia y libertad.",
     "imageUrl": "https://png.pngtree.com/background/20230614/original/pngtree-majestic-buffalo-is-on-the-ground-in-the-desert-picture-image_3506583.jpg",
@@ -319,7 +319,7 @@ export default [
   },
   {
     "id": "tucan",
-    "name": "Tucan",
+    "name": "Tucán",
     "shortDescription": "Los tucanes (Ramphastidae) son una familia de aves piciformes.",
     "description":"El tucán, conocido por su llamativo y colorido plumaje, es una especie de ave tropical que despierta admiración a dondequiera que va. Su tamaño promedio oscila entre los 50 y los 70 centímetros de largo, siendo su característica más destacada su enorme pico, que puede llegar a medir casi la mitad de su longitud total. Este pico vibrante y colorido, con tonalidades brillantes de amarillo, verde y rojo, es utilizado tanto para capturar su alimento, como para emitir poderosos llamados de resonancia.",
     "imageUrl": "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQpMb9GY3kADxGb9prVezCGADHG6wnfBJY9FHo5E2KxBncVnwREkqr51frX99fb4vwW",

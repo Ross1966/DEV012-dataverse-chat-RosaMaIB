@@ -37,7 +37,7 @@ export const chatGrupal = () =>{
     contenedorChat.innerHTML = chat;
     contenedorPrincipal.appendChild(resultadoLista);
     contenedorPrincipal.appendChild(contenedorChat)
-console.log(contenedorChat)
+    console.log(contenedorChat)
 
      ///CHAT GRUPAL
 
@@ -84,6 +84,9 @@ console.log(contenedorChat)
          });
      }
  
+
+
+     //BOTON PARA REGRESAR AL HOME
     const botonHome = `<button id="home">
       <img  id="botonHome" src="../img/BotonHome.png">
       </button>`
