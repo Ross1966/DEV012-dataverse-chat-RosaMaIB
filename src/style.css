@@ -19,6 +19,17 @@ header{
     
 }
 */
+.userMensaje{
+    background-color: pink;
+    align-self: flex-end;
+    display: inline-block;
+}
+
+.assistantMensaje, .systemMensaje{
+    background-color: #bb90f0;
+    display: inline-block;
+    align-self: flex-start;
+}
 
 #home, #home2{
 
@@ -42,7 +53,8 @@ header{
     padding-top: 10px;
     padding-bottom: 10px; 
     border-radius: 50px;
-    background-color: gold;
+    background-color: rgb(245, 236, 107);
+    text-shadow: 0px 1px 0px rgb(0, 0, 0);
 }
 
 #chatGrupo{
@@ -50,7 +62,9 @@ header{
      padding-bottom: 10px;
      margin-bottom: 20px;
      border-radius: 50px;
-     background-color: gold;
+     background-color: rgb(245, 236, 107);
+     margin-top: 70px;
+     text-shadow: 0px 1px 0px rgb(0, 0, 0);
 }
 
 
@@ -113,7 +127,11 @@ header{
     border-style: groove;
 }
 #contenedorTexto{
+    display: flex;
+    flex-direction: column;
+    /*
     text-align: end;
+    */
     background-color: #8FCC73;
     width: 94%;
     height: 430px;
@@ -125,7 +143,9 @@ header{
 }
 .textIndividual{
     margin: 5px 15px;
+    /*
     background-color: rgb(241, 174, 208);
+    */
     border-radius: 10px;
     padding: 0px 10px 0px 10px;
 }

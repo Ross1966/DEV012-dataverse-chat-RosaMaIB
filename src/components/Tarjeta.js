@@ -30,6 +30,7 @@ data.forEach((animal) => {
       const box = li.querySelector(`#${animal.id}`);
       box.addEventListener("click", function() {
         sessionStorage.selecVista = animal.id
+        
          navigateTo('/Example','props')
     });
     container.appendChild(li)
