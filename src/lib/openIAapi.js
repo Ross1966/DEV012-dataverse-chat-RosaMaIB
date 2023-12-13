@@ -21,13 +21,13 @@ export function iniciarChat(nombre){
     historialMensaje.length = 0
     historialMensaje.push( {
         "role": "system",
-        "content": "Hola soy un " + nombre 
+        "content": "Resnpondeme como si fueras un "+ nombre
+        //"content": "Hola soy un " + nombre 
       })
     return historialMensaje;
 }
 
 export function getCompletion(apiKey, historial) {
-    
     
     return fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',

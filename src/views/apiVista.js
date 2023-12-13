@@ -3,7 +3,9 @@ import { navigateTo } from "../router.js";
 export const vistaApi = () =>{
     const apiHtml = `
     
-    <button id="home2">Home</button>
+    <button id="home2">
+    <img  id="botonHome" src="../img/BotonHome.png">
+    </button>
       
         <div class="cajaApi">
             <label for="">Ingresa aquí tu número ApiKey:</label>

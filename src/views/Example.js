@@ -10,7 +10,9 @@ export const Example = () => {
     const vistaHtml =  `
     <div id="tarjetaPrincipal">
     <div id="contenedorTarjeta">
-    <button id="home">Home</button>
+    <button id="home">
+    <img  id="botonHome" src="../img/BotonHome.png">
+    </button>
     <h2 class="tituloId">${animal.name}</h2>
     <img class="imgIndividual" src="${animal.imageUrl}">
     <p class="imgParrafo">${animal.description}</p>
@@ -38,7 +40,9 @@ export const Example = () => {
     const contenedorTexto = result.querySelector("#contenedorTexto");
     //const borrarTexto = result.querySelector("#borrarTexto");
     //<button id="borrarTexto">Limpiar</button>
+    
     let historialText = iniciarChat(animal.name);
+    
      //mostrarHistorial()
     mostrarTexto.addEventListener("click", function() {
         enviarTexto();
@@ -66,15 +70,31 @@ export const Example = () => {
     function mostrarHistorial() {
         let contenedor = contenedorTexto;
         contenedor.innerHTML = "";
+
         historialText.forEach(function(mensaje) {
         let nuevoDiv = document.createElement("div");
         nuevoDiv.classList.add("textIndividual");
+
+        //se crea un class para darle color a los mensajes de "user" y diferenciarlos del mensaje del "assistant"
+        if (mensaje.role === "user") {
+            nuevoDiv.classList.add("userMensaje");
+          } else if (mensaje.role === "assistant") {
+            nuevoDiv.classList.add("assistantMensaje");
+          } else if (mensaje.role === "system") {
+            nuevoDiv.classList.add("systemMensaje");
+          }
+
+
         let nuevoParrafo = document.createElement("p");
         nuevoParrafo.innerText = mensaje.content;
         nuevoDiv.appendChild(nuevoParrafo);
         contenedor.appendChild(nuevoDiv);
         });
+
+        //Agregamos el SCROLL AUTOMATICO
+        contenedor.scrollTop = contenedor.scrollHeight;
     }
+
     return result;
 }
 

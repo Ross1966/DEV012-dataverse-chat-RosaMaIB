@@ -1,5 +1,6 @@
 import { getElementById } from "../lib/apiData.js";
 import dataset from "../data/dataset.js";
+import { navigateTo } from "../router.js";
 
 export const chatGrupal = () =>{
     const contenedorPrincipal = document.createElement("div")
@@ -84,6 +85,22 @@ console.log(contenedorChat)
          contenedor.scrollTop = contenedor.scrollHeight;
      }
  
+    const botonHome = `<button id="home">
+      <img  id="botonHome" src="../img/BotonHome.png">
+      </button>`
+
+    
+
+    const contenedorBoton = document.createElement('div')
+
+    contenedorBoton.innerHTML = botonHome
+    contenedorPrincipal.appendChild(contenedorBoton)
+
+    const regresaHome = contenedorPrincipal.querySelector('#botonHome')
+
+    regresaHome.addEventListener("click", function() {
+        navigateTo('/', 'props')
+    })
   
 return contenedorPrincipal;
 }
