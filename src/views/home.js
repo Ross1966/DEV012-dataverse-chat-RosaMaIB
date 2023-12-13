@@ -91,6 +91,7 @@ export const Home = () => {
               
 
             })
+            //BOTON LIMPIAR
 
               //BOTON LIMPIAR
 
@@ -106,8 +107,8 @@ export const Home = () => {
 
               });
 
-             //BOTON CHAT GRUPAL
-
+            
+            //BOTON CHAT GRUPAL
             const chatGrupo = filtros.querySelector("#chatGrupo")
             chatGrupo.addEventListener("click", function(){
               console.log("Hola soy el BOTÓN CHAT GRUPAL")

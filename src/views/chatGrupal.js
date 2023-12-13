@@ -82,6 +82,7 @@ export const chatGrupal = () =>{
          nuevoDiv.appendChild(nuevoParrafo);
          contenedor.appendChild(nuevoDiv);
          });
+         contenedor.scrollTop = contenedor.scrollHeight;
      }
  
 

@@ -9,6 +9,7 @@ export function agregarMensajesUsuario(mensaje){
 }
 
 export function agregarMensajeIA(mensaje){
+    
     historialMensaje.push({
         "role": "assistant",
         "content": mensaje
@@ -20,7 +21,8 @@ export function iniciarChat(nombre){
     historialMensaje.length = 0
     historialMensaje.push( {
         "role": "system",
-        "content": "Hola soy un   " + nombre 
+        "content": "Resnpondeme como si fueras un "+ nombre
+        //"content": "Hola soy un " + nombre 
       })
     return historialMensaje;
 }
