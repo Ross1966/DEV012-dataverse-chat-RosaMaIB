@@ -3,7 +3,7 @@ import { getCompletion, iniciarChat, agregarMensajeIA, agregarMensajesUsuario} f
 import { navigateTo } from "../router.js";
 import { vistaApi } from "./apiVista.js";
 //import { navigateTo } from "../router.js";
-export const Example = () => {
+export const Detalle = () => {
     const result = document.createElement('p');
     let traerId = sessionStorage.getItem(`selecVista`)
     const animal = getElementById(traerId)
