@@ -1,5 +1,5 @@
 import { Home } from './views/home.js';
-import {Example} from './views/Example.js';
+import {Detalle} from './views/Detalle.js';
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
 import { vistaApi } from './views/apiVista.js';
@@ -10,7 +10,7 @@ import { chatGrupal } from './views/chatGrupal.js';
 
 const routes = {
     "/": Home,
-    "/Example": Example,
+    "/Detalle": Detalle,
     "/Error": Error,
     "/ApiKey": vistaApi,
     "/chatGrupal": chatGrupal

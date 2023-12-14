@@ -1,5 +1,5 @@
 import dataset from "../data/dataset.js";
-import { Filtros }   from "../components/Filtros.js";
+
 
 
 export const sortData = (dataset, sortBy, sortOrder) => {
