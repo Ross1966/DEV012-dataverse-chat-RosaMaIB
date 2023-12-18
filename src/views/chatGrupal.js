@@ -59,7 +59,8 @@ export const chatGrupal = () =>{
 
      ///CHAT GRUPAL
 
-     let historialText = [];
+     let historialText = iniciarChat(dataset);
+    
 
      mostrarTexto.addEventListener("click", function() {
         enviarTexto();
@@ -77,28 +78,34 @@ export const chatGrupal = () =>{
      function enviarTexto() {
         let texto = miInputGrupal.value;
         const keyUsuario = localStorage.getItem("Api_Ingresada")
+        const arregloDePromesas = []
         dataset.forEach((animal) => {
          agregarMensajesUsuario(texto)
          console.log(agregarMensajesUsuario())
-        
-         console.log(keyUsuario)
+        arregloDePromesas.push(getCompletion(keyUsuario, dataset))
+        /* console.log(keyUsuario)
          getCompletion(keyUsuario, historialText).then((respuesta) => {
             console.log(respuesta)
             agregarMensajeIA(respuesta.choices[0].message.content)
             miInput.value = ""
             //console.log("SOY EL ADDEVENT LISTENER");
               mostrarHistorial()
-         })
+         })*/
         })
-          console.log(getCompletion())  
-           
+          console.log(arregloDePromesas)  
+         Promise.all(arregloDePromesas).then((arregloDeRespuestas) =>{
+          arregloDeRespuestas.forEach((respuesta) => {
+            console.log(respuesta)
+            mostrarHistorial()
+          })
+         } )
     };
      
      
      
 
     function mostrarHistorial() {
-        let contenedor = contenedorTexto;
+        let contenedor = contenedorGrupal;
         contenedor.innerHTML = "";
 
         historialText.forEach(function(mensaje) {
@@ -124,13 +131,6 @@ export const chatGrupal = () =>{
         //Agregamos el SCROLL AUTOMATICO
         contenedor.scrollTop = contenedor.scrollHeight;
     }
-
-
-
-
-
-
-
 
 
      //BOTON PARA REGRESAR AL HOME
