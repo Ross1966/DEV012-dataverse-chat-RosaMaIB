@@ -71,7 +71,9 @@ export const Detalle = () => {
         let contenedor = contenedorTexto;
         contenedor.innerHTML = "";
 
+        let mostrarMensajeSystem = false
         historialText.forEach(function(mensaje) {
+        if (!(mensaje.role === "system" && !mostrarMensajeSystem)) {
         let nuevoDiv = document.createElement("div");
         nuevoDiv.classList.add("textIndividual");
 
@@ -89,6 +91,7 @@ export const Detalle = () => {
         nuevoParrafo.innerText = mensaje.content;
         nuevoDiv.appendChild(nuevoParrafo);
         contenedor.appendChild(nuevoDiv);
+        }
         });
 
         //Agregamos el SCROLL AUTOMATICO

@@ -2,7 +2,7 @@
 import  data  from '../data/dataset.js';
 import { navigateTo } from '../router.js';
 import { Footer } from '../components/footer.js';
-import { renderItems } from '../components/tarjeta.js';
+import { renderItems } from '../components/Tarjeta.js';
 import { filterDataByDiet, sortData } from '../lib/dataFunctions.js';
 import { Titulo } from '../components/Titulo.js';
 //import { filterDataByHabit } from '../lib/dataFunctions.js';
