@@ -79,30 +79,33 @@ export const chatGrupal = () =>{
     function enviarTexto() {
       let texto = miInputGrupal.value;
       const keyUsuario = localStorage.getItem("Api_Ingresada")
-      /*if(keyUsuario === ""){
+      if(keyUsuario === ""){
         alert("No Ingresaste un código APi")
-      }*/
+      }
       historialText.push({ role: "user", content: texto });
       console.log("llamando a la petición")
-      const arregloDePromesas = []
-      dataset.forEach((animal) => {
+      const arregloDePromesas =  dataset.map((animal) => {
         //historialText.push(iniciarChat(animal.name))
       //agregarMensajesUsuario(texto)
-        historialText.push({role: "system", content: "Resnpondeme como si fueras un "+ animal.name})
+        let historialAnimal = [{role: "system", content: "Resnpondeme como si fueras un "+ animal.name}, 
+        { role: "user", content: texto } ]
         
         //console.log("SOY EL CONSOLE DE AGREGARMENSAJEUSUARIO", agregarMensajesUsuario())
-        arregloDePromesas.push(getCompletion(keyUsuario, historialText))
-      //historialText.push({ role: "user", content: texto });
+        //arregloDePromesas.push(getCompletion(keyUsuario, historialText))
+     
        console.log("llamando a getcompletion")
+       return getCompletion(keyUsuario, historialAnimal).then(respuesta => {
+        return { animal: animal.name, respuesta: respuesta.choices[0].message.content };
+    });
      
       })
         console.log(arregloDePromesas)  
         Promise.all(arregloDePromesas).then((arregloDeRespuestas) =>{
-        arregloDeRespuestas.forEach((respuesta) => {
+        arregloDeRespuestas.forEach((result) => {
           
-          historialText.push({ role: "assistant", content: respuesta.choices[0].message.content });
+          historialText.push({ role: "assistant", content: result.respuesta });
          
-          console.log(respuesta)
+         //console.log(respuesta)
         })
         mostrarHistorial()
        })
