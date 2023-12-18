@@ -73,45 +73,60 @@ export const chatGrupal = () =>{
     });
 
 
+    
 
-     function enviarTexto() {
-        let texto = miInputGrupal.value;
-        const keyUsuario = localStorage.getItem("Api_Ingresada")
-        dataset.forEach((animal) => {
-         agregarMensajesUsuario(texto)
-         console.log(agregarMensajesUsuario())
+    function enviarTexto() {
+      let texto = miInputGrupal.value;
+      const keyUsuario = localStorage.getItem("Api_Ingresada")
+      historialText.push({ role: "user", content: texto });
+      
+      const arregloDePromesas = []
+      dataset.forEach((animal) => {
+        //historialText.push(iniciarChat(animal.name))
+      //agregarMensajesUsuario(texto)
+        historialText.push({role: "system", content: "Resnpondeme como si fueras un "+ animal.name})
         
-         console.log(keyUsuario)
-         getCompletion(keyUsuario, historialText).then((respuesta) => {
-            console.log(respuesta)
-            agregarMensajeIA(respuesta.choices[0].message.content)
-            miInput.value = ""
-            //console.log("SOY EL ADDEVENT LISTENER");
-              mostrarHistorial()
-         })
+        //console.log("SOY EL CONSOLE DE AGREGARMENSAJEUSUARIO", agregarMensajesUsuario())
+        arregloDePromesas.push(getCompletion(keyUsuario, historialText))
+      //historialText.push({ role: "user", content: texto });
+      
+     
+      })
+        console.log(arregloDePromesas)  
+        Promise.all(arregloDePromesas).then((arregloDeRespuestas) =>{
+        arregloDeRespuestas.forEach((respuesta) => {
+          
+          historialText.push({ role: "assistant", content: respuesta.choices[0].message.content });
+         
+          console.log(respuesta)
         })
-          console.log(getCompletion())  
-           
-    };
+        mostrarHistorial()
+       })
+       .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
      
      
      
 
     function mostrarHistorial() {
-        let contenedor = contenedorTexto;
+        let contenedor = contenedorTextoGrupal;
         contenedor.innerHTML = "";
 
+        let mostrarMensajeSystem = false
         historialText.forEach(function(mensaje) {
+        if (!(mensaje.role === "system" && !mostrarMensajeSystem)) {
         let nuevoDiv = document.createElement("div");
         nuevoDiv.classList.add("textIndividual");
 
         //se crea un class para darle color a los mensajes de "user" y diferenciarlos del mensaje del "assistant"
         if (mensaje.role === "user") {
-            nuevoDiv.classList.add("userMensaje");
+            nuevoDiv.classList.add("userMensajeGrupal");
           } else if (mensaje.role === "assistant") {
-            nuevoDiv.classList.add("assistantMensaje");
+            nuevoDiv.classList.add("assistantMensajeGrupal");
           } else if (mensaje.role === "system") {
-            nuevoDiv.classList.add("systemMensaje");
+            nuevoDiv.classList.add("systemMensajeGrupal");
           }
 
 
@@ -119,8 +134,9 @@ export const chatGrupal = () =>{
         nuevoParrafo.innerText = mensaje.content;
         nuevoDiv.appendChild(nuevoParrafo);
         contenedor.appendChild(nuevoDiv);
+          }
         });
-
+      
         //Agregamos el SCROLL AUTOMATICO
         contenedor.scrollTop = contenedor.scrollHeight;
     }

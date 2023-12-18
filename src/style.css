@@ -31,6 +31,19 @@ header{
     align-self: flex-start;
 }
 
+.userMensajeGrupal {
+    background-color: rgb(224, 92, 114);
+    align-self: flex-end;
+    display: inline-block;
+}
+
+.assistantMensajeGrupal, .systemMensajeGrupal {
+    background-color: #9b58ec;
+    align-self: flex-start;
+    width: fit-content;
+    padding: 10px;
+}
+
 #home, #home2{
 
     width: 55px;
@@ -333,7 +346,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 5px;
 }
 #contenedorTextoGrupal{
-    text-align: end;
+    
     background-color: #58fa0d;
     width: 94%;
     height: 300px;
@@ -343,6 +356,11 @@ input[type=number]::-webkit-outer-spin-button {
     border-style: solid;
     border-color: #000000;
     margin-top: 10px;
+
+
+
+    display: flex;
+    flex-direction: column;
 }
 #miInputGrupal{
     width: 90%;
