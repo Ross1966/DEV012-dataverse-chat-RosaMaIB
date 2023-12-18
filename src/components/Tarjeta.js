@@ -31,7 +31,7 @@ data.forEach((animal) => {
       box.addEventListener("click", function() {
         sessionStorage.selecVista = animal.id
         
-         navigateTo('/Example','props')
+         navigateTo('/Detalle','props')
     });
     container.appendChild(li)
 });

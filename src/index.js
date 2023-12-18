@@ -1,5 +1,5 @@
 import { Home } from './views/home.js';
-import { Detalle } from './views/Detalle.js';
+import {Detalle} from './views/Detalle.js';
 import { Error } from './views/error.js';
 import {onURLChange, setRootElement, setRoutes } from './router.js';
 import { vistaApi } from './views/apiVista.js';
