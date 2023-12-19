@@ -1,7 +1,7 @@
 import { navigateTo } from "../router.js";
 
-export const vistaApi = () =>{
-    const apiHtml = `
+export const vistaApi = () => {
+  const apiHtml = `
     
     <button id="home2">
     <img  id="botonHome" src="../img/BotonHome.png">
@@ -17,56 +17,36 @@ export const vistaApi = () =>{
             <img class="koala" src="../img/koala.png" alt="koala">
             
         </div>
-    `
+    `;
 
-    
+  const apiView = document.createElement("section");
+  apiView.classList.add("apiSection");
+  apiView.innerHTML = apiHtml;
 
-    const apiView = document.createElement("section");
-    apiView.classList.add("apiSection");
-    apiView.innerHTML = apiHtml;
+  //BOTON HOME
 
-    
-     //BOTON HOME
+  const home2 = apiView.querySelector("#home2");
+  home2.addEventListener("click", function () {
+    navigateTo("/", "props");
+  });
 
-     const home2 = apiView.querySelector("#home2");
-     home2.addEventListener("click", function() {
-     navigateTo('/', 'props')
- })
+  //FUNCION PARA CHECAR LA CONTRASEÑA
 
+  const ingresar = apiView.querySelector("#ingresar");
 
+  //const correcta = "Hola20"
 
+  ingresar.addEventListener("click", function () {
+    const entrada = apiView.querySelector("#entrada").value;
 
-    
-    //FUNCION PARA CHECAR LA CONTRASEÑA 
-    
-    const ingresar = apiView.querySelector('#ingresar')
-    
-    //const correcta = "Hola20"
+    localStorage.setItem("Api_Ingresada", entrada);
 
-        ingresar.addEventListener("click", function (){
+    //console.log(entrada);
+    //console.log(password);
+  });
 
-         const entrada = apiView.querySelector('#entrada').value;
-         
-         const password = localStorage.setItem("Api_Ingresada", entrada)
-
-          
-          
-          console.log(entrada)
-          console.log(password)
-         
-         
-          
-
-
-
-        })
-
-
-      
-
-    return apiView;
-    
-} 
+  return apiView;
+}; 
 
 
 

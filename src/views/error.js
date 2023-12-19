@@ -1,5 +1,5 @@
 export const Error = () => {
-    const parrafoError = `
+  const parrafoError = `
    
     <div class = fondoError>
     <img class="jirafaTriste" src="jirafaTriste-removebg-preview.png" alt="">
@@ -8,11 +8,9 @@ export const Error = () => {
     <h4 class="TextError2">Page Not Found</h4>
     </div>
     
-    `
-   const errorView = document.createElement("section");
-    errorView.innerHTML = parrafoError;
+    `;
+  const errorView = document.createElement("section");
+  errorView.innerHTML = parrafoError;
 
-    
-
-    return errorView;
-}
+  return errorView;
+};
