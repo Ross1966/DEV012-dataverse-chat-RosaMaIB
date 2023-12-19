@@ -585,7 +585,7 @@ label{
         
         background-color: transparent;
         cursor: pointer;
-        
+        position: absolute;
 
     }
 

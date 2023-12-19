@@ -2,14 +2,14 @@ import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
 
 export const renderItems = (data) => {
-//container.classList.add("lista")
-const container = document.createElement("ul")
-container.classList.add("lista")
-data.forEach((animal) => {
-  //<li itemscope itemtype="animal" class="box" id="imagen">
-    const li = document.createElement("li")
-    li.classList.add("box")
-    li.innerHTML=`
+  //container.classList.add("lista")
+  const container = document.createElement("ul");
+  container.classList.add("lista");
+  data.forEach((animal) => {
+    //<li itemscope itemtype="animal" class="box" id="imagen">
+    const li = document.createElement("li");
+    li.classList.add("box");
+    li.innerHTML = `
     <dl id="${animal.id}">
     <h2 class="id">${animal.name}</h2>
     <img class="imgTarjetas" src="${animal.imageUrl}" alt="${animal.name}"/>
@@ -27,13 +27,13 @@ data.forEach((animal) => {
     <dd itemprop ='' class="parrafoBox">${animal.facts.tipoDieta}</dd>
     </dl>
   `;
-      const box = li.querySelector(`#${animal.id}`);
-      box.addEventListener("click", function() {
-        sessionStorage.selecVista = animal.id
-        
-         navigateTo('/Detalle','props')
+    const box = li.querySelector(`#${animal.id}`);
+    box.addEventListener("click", function () {
+      sessionStorage.selecVista = animal.id;
+
+      navigateTo("/Detalle", "props");
     });
-    container.appendChild(li)
-});
-  return container
-}
+    container.appendChild(li);
+  });
+  return container;
+};

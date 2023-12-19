@@ -1,29 +1,21 @@
-
-import  data  from '../data/dataset.js';
-import { navigateTo } from '../router.js';
-import { Footer } from '../components/footer.js';
-import { renderItems } from '../components/Tarjeta.js';
-import { filterDataByDiet, sortData } from '../lib/dataFunctions.js';
-import { Titulo } from '../components/Titulo.js';
+import data from "../data/dataset.js";
+import { navigateTo } from "../router.js";
+import { Footer } from "../components/footer.js";
+import { renderItems } from "../components/Tarjeta.js";
+import { filterDataByDiet, sortData } from "../lib/dataFunctions.js";
+import { Titulo } from "../components/Titulo.js";
 //import { filterDataByHabit } from '../lib/dataFunctions.js';
-
 
 let datosFiltrados = data;
 
-
-
-
-
 export const Home = () => {
-    
-    const mainContainer = document.createElement('div')
-    let listaAnimales = document.createElement('section')  
-    const filtros = document.createElement('div')
-    filtros.classList.add("contenedor1")
-    let listadoAnimales = renderItems(datosFiltrados)
-   
-    
-      filtros.innerHTML = `
+  const mainContainer = document.createElement("div");
+  let listaAnimales = document.createElement("section");
+  const filtros = document.createElement("div");
+  filtros.classList.add("contenedor1");
+  let listadoAnimales = renderItems(datosFiltrados);
+
+  filtros.innerHTML = `
       
           <button class="abrir-menu" id="abrir-menu"><i class="bi bi-list"></i></button>
           
@@ -56,104 +48,89 @@ export const Home = () => {
             <button id="chatGrupo">Chat Grupal</button>
             <button id="api">Api Key</button>
       `;
-      
-        //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
-        let ordenar =  filtros.querySelector(`select[data-testid="select-sort"]`);
-          //console.log(ordenar)
+  //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
-            ordenar.addEventListener("change", (e) => {
-            const opcion = e.target.value;
-            datosFiltrados = sortData(datosFiltrados, "name" , opcion);
-             const listaNueva = renderItems(datosFiltrados)
-             //console.log(listaNueva)
-             listaAnimales.replaceChild(listaNueva, listadoAnimales)
-             listadoAnimales = listaNueva
-          }); 
+  let ordenar = filtros.querySelector(`select[data-testid="select-sort"]`);
+  //console.log(ordenar)
 
+  ordenar.addEventListener("change", (e) => {
+    const opcion = e.target.value;
+    datosFiltrados = sortData(datosFiltrados, "name", opcion);
+    const listaNueva = renderItems(datosFiltrados);
+    //console.log(listaNueva)
+    listaAnimales.replaceChild(listaNueva, listadoAnimales);
+    listadoAnimales = listaNueva;
+  });
 
-          //FUNCION PARA FILTRAR ANIMALES POR SU DIETA
+  //FUNCION PARA FILTRAR ANIMALES POR SU DIETA
 
-          let tipoDieta =  filtros.querySelector(`select[data-testid="select-filter"]`);
-          //console.log(tipoDieta)
+  let tipoDieta = filtros.querySelector(`select[data-testid="select-filter"]`);
+  //console.log(tipoDieta)
 
+  tipoDieta.addEventListener("change", (e) => {
+    const dieta = e.target.value;
+    datosFiltrados = filterDataByDiet(data, dieta);
+    //console.log(datosFiltrados)
+    const listaNuevaDieta = renderItems(datosFiltrados);
+    //console.log(listaNuevaDieta)
+    listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales);
+    //console.log(listaAnimales)
+    listadoAnimales = listaNuevaDieta;
+  });
+  //BOTON LIMPIAR
 
-            tipoDieta.addEventListener("change", (e) => {
-              const dieta = e.target.value;
-              datosFiltrados = filterDataByDiet(data, dieta);
-              //console.log(datosFiltrados)
-              const listaNuevaDieta = renderItems(datosFiltrados)
-              //console.log(listaNuevaDieta)
-              listaAnimales.replaceChild(listaNuevaDieta, listadoAnimales)
-              //console.log(listaAnimales)
-              listadoAnimales = listaNuevaDieta
-              
-              
+  //BOTON LIMPIAR
 
-            })
-            //BOTON LIMPIAR
+  const boton = filtros.querySelector('[data-testid="button-clear"]');
+  boton.addEventListener("click", function () {
+    tipoDieta.value = "";
+    ordenar.value = "";
+    const regresar = renderItems(data);
+    console.log(regresar);
+    listaAnimales.replaceChild(regresar, listadoAnimales);
+    listadoAnimales = regresar;
+  });
 
-              //BOTON LIMPIAR
+  //BOTON CHAT GRUPAL
+  const chatGrupo = filtros.querySelector("#chatGrupo");
+  chatGrupo.addEventListener("click", function () {
+    console.log("Hola soy el BOTÓN CHAT GRUPAL");
+    navigateTo("/chatGrupal", "props");
+  });
 
-              const boton= filtros.querySelector('[data-testid="button-clear"]');
-              boton.addEventListener("click", function(){
-              tipoDieta.value = ""
-              ordenar.value = ""
-              const regresar =renderItems(data)
-              console.log(regresar)
-              listaAnimales.replaceChild(regresar, listadoAnimales)
-              listadoAnimales = regresar
+  //BOTON APIKEY
 
+  const api = filtros.querySelector("#api");
+  api.addEventListener("click", function () {
+    navigateTo("/ApiKey", "props");
+  });
 
-              });
+  //MENU HAMBURGUESA
 
-            
-            //BOTON CHAT GRUPAL
-            const chatGrupo = filtros.querySelector("#chatGrupo")
-            chatGrupo.addEventListener("click", function(){
-              console.log("Hola soy el BOTÓN CHAT GRUPAL")
-              navigateTo('/chatGrupal','props')
-            })
+  //const contenedor1 = filtros.querySelector("#contenedor1");
+  const cerrar = filtros.querySelector("#cerrar-menu");
+  const abrir = filtros.querySelector("#abrir-menu");
 
+  abrir.addEventListener("click", () => {
+    contenedor1.classList.add("visible");
+  });
+  cerrar.addEventListener("click", () => {
+    contenedor1.classList.remove("visible");
+  });
+  console.log("Soy el menu hamburguesa", filtros);
 
-            //BOTON APIKEY
+  const crearDivView = document.createElement("div");
+  crearDivView.classList.add("contenedor1");
+  crearDivView.innerHTML = filtros.innerHTML;
 
-            const api = filtros.querySelector('#api')
-            api.addEventListener("click", function () {
-              navigateTo('/ApiKey', 'props')
-            })
+  mainContainer.appendChild(Titulo());
+  mainContainer.appendChild(filtros);
+  mainContainer.appendChild(listaAnimales);
+  listaAnimales.appendChild(listadoAnimales);
+  mainContainer.appendChild(Footer());
 
+  mainContainer.appendChild(crearDivView);
 
-        
-           
-
-
-               
-
-
-
-    const crearDivView = document.createElement("div");
-    crearDivView.classList.add("contenedor1")
-    crearDivView.innerHTML =  filtros.innerHTML;
-
-
-    mainContainer.appendChild(Titulo());
-    mainContainer.appendChild(filtros)
-    mainContainer.appendChild(listaAnimales)
-    listaAnimales.appendChild(listadoAnimales)
-    mainContainer.appendChild(Footer());
-   
-    mainContainer.appendChild(crearDivView)
-    
-
-    
-
-  
- 
-    return mainContainer;
-
-    
-}
-
-
-
+  return mainContainer;
+};
