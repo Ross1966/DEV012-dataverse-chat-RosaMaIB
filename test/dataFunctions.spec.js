@@ -1,32 +1,43 @@
-import { filterDataByDiet, sortData} from '../src/dataFunctions.js';
-import { data as fakeData } from './data.js';
+import { sortData, filterDataByDiet } from '../src/lib/dataFunctions.js';
+import dataset from '../src/data/dataset.js';
 
-//console.log(fakeData);
+
 
 const TEST_FILTRO_DIETA = "Insectívora"
 describe('filtrarDieta', () => {
 
   it('Deberia devolver 4 animales insectívoros', () => {
-    const dietaInsectivora = filterDataByDiet(fakeData, TEST_FILTRO_DIETA)
+    const dietaInsectivora = filterDataByDiet(dataset, TEST_FILTRO_DIETA)
     expect(dietaInsectivora.length).toBe(4);
   });
 });
+
+const TEST_FILTRO_DIETA_CARNE = "Carnívoro"
+describe('filtrarDieta', () => {
+
+  it('Deberia devolver 7 animales carnívoros', () => {
+    const dietaCarnivora = filterDataByDiet(dataset, TEST_FILTRO_DIETA_CARNE)
+    expect(dietaCarnivora.length).toBe(7);
+  });
+});
+
+
 
 
 
 const TEST_ASCENDENTE = "asc"
 describe("Ascendente", ()=>{
   it("Deberia devolver los nombres ordenados de forma ascendente",()=>{
-    const numAsc = sortData(fakeData, "name", TEST_ASCENDENTE)
-    expect(numAsc[0]).toStrictEqual(fakeData[0]);
+    const numAsc = sortData(dataset, "name", TEST_ASCENDENTE)
+    expect(numAsc[0]).toStrictEqual(dataset[0]);
   });
 });
 
 const TEST_DESCENDENTE = "desc"
 describe("Descendente", ()=>{
   it("Deberia de volver los nombres ordenados de forma Descendente",()=>{
-    const numDesc = sortData(fakeData,"name", TEST_DESCENDENTE)
-    expect(numDesc[7]).toStrictEqual(fakeData[7]);
+    const numDesc = sortData(dataset,"name", TEST_DESCENDENTE)
+    expect(numDesc[7]).toStrictEqual(dataset[7]);
   });
 });
 

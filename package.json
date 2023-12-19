@@ -14,6 +14,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@jest/globals": "^29.7.0",
     "acorn": "^8.8.2",
     "babel-jest": "^27.0.1",
     "css": "^3.0.0",
@@ -36,5 +37,9 @@
     "createdAt": "2023-10-12T21:16:48.330Z",
     "version": "7.2.0",
     "commit": "916e031e02c3283ec75092f3e122fa58755d56c3"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.11",
+    "ts-node": "^10.9.2"
   }
 }

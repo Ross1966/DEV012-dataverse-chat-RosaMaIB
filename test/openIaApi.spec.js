@@ -1,0 +1,31 @@
+import { getCompletion } from "../src/lib/openIAapi";
+
+const openIaRespuesta = jest.fn().mockResolvedValueOnce({choices:[{message:"foo"}]});
+
+global.fetch = jest.fn(() =>
+  Promise((resolve) => resolve( {
+    json: openIaRespuesta,
+  }))
+);
+
+describe("endpoint de openIa", () => {
+  it("La api es llamada con los datos adecuados", () => {
+    const mensajes = [{ role: "user", content: "foo" }];
+    getCompletion("123456", mensajes);
+    expect(global.fetch).toBeCalledWith(
+      "https://api.openai.com/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer 123456",
+        },
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          mensajes,
+        }),
+      }
+    );
+  });
+});
+
