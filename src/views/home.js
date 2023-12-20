@@ -1,10 +1,10 @@
 import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
-import { Footer } from "../components/footer.js";
+import { Footer } from "../components/Footer.js";
 import { renderItems } from "../components/Tarjeta.js";
 import { filterDataByDiet, sortData } from "../lib/dataFunctions.js";
 import { Titulo } from "../components/Titulo.js";
-
+//import { filterDataByHabit } from '../lib/dataFunctions.js';
 
 let datosFiltrados = data;
 
@@ -12,13 +12,14 @@ export const Home = () => {
   const mainContainer = document.createElement("div");
   const listaAnimales = document.createElement("section");
   const filtros = document.createElement("div");
-  filtros.classList.add("contenedor1");
+  filtros.classList.add("contenedor3");
   let listadoAnimales = renderItems(datosFiltrados);
 
   filtros.innerHTML = `
       
-          <button class="abrir-menu" id="abrir-menu"><i class="bi bi-list"></i></button>
           
+            <button class="abrir-menu" id="abrir-menu"><i class="bi bi-list"></i></button>
+            <div class="contenedor1" id="contenedor1">
             <button class="cerrar-menu" id="cerrar-menu"><i class="bi bi-x"></i></button>
             <label>Ordenar de:</label>
             <select name="name" data-testid="select-sort">
@@ -47,7 +48,9 @@ export const Home = () => {
 
             <button id="chatGrupo">Chat Grupal</button>
             <button id="api">Api Key</button>
+            </div>
       `;
+      
 
   //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
@@ -87,7 +90,7 @@ export const Home = () => {
     tipoDieta.value = "";
     ordenar.value = "";
     const regresar = renderItems(data);
-    //console.log(regresar);
+   
     listaAnimales.replaceChild(regresar, listadoAnimales);
     listadoAnimales = regresar;
   });
@@ -95,7 +98,7 @@ export const Home = () => {
   //BOTON CHAT GRUPAL
   const chatGrupo = filtros.querySelector("#chatGrupo");
   chatGrupo.addEventListener("click", function () {
-    //console.log("Hola soy el BOTÓN CHAT GRUPAL");
+    
     navigateTo("/chatGrupal", "props");
   });
 
@@ -106,8 +109,10 @@ export const Home = () => {
     navigateTo("/ApiKey", "props");
   });
 
+  
+  
   const crearDivView = document.createElement("div");
-  crearDivView.classList.add("contenedor1");
+  crearDivView.classList.add("contenedor2");
   crearDivView.innerHTML = filtros.innerHTML;
 
   mainContainer.appendChild(Titulo());
@@ -115,8 +120,24 @@ export const Home = () => {
   mainContainer.appendChild(listaAnimales);
   listaAnimales.appendChild(listadoAnimales);
   mainContainer.appendChild(Footer());
+  
 
   mainContainer.appendChild(crearDivView);
+
+  //MENU HAMBURGUESA
+  const contenedor1 = filtros.querySelector("#contenedor1")
+  const cerrar = filtros.querySelector("#cerrar-menu");
+const abrir = filtros.querySelector("#abrir-menu");
+
+abrir.addEventListener("click", () => {
+  contenedor1.classList.add("visible");
+  console.log("Hola")
+});
+
+cerrar.addEventListener("click", () => {
+  contenedor1.classList.remove("visible");
+});
+console.log("Soy el menu hamburguesa", crearDivView)
 
   return mainContainer;
 };
