@@ -1,12 +1,6 @@
-import { getElementById } from "../lib/apiData.js";
 import dataset from "../data/dataset.js";
 import { navigateTo } from "../router.js";
-import {
-  getCompletion,
-  iniciarChat,
-  agregarMensajeIA,
-  agregarMensajesUsuario,
-} from "../lib/openIAapiGrupo.js";
+import { getCompletion } from "../lib/openIAapiGrupo.js";
 
 export const chatGrupal = () => {
   const contenedorPrincipal = document.createElement("div");
@@ -55,11 +49,10 @@ export const chatGrupal = () => {
 
   contenedorPrincipal.appendChild(resultadoLista);
   contenedorPrincipal.appendChild(contenedorChat);
-  console.log(contenedorChat);
 
   ///CHAT GRUPAL
 
-  let historialText = [];
+  const historialText = [];
 
   mostrarTexto.addEventListener("click", function () {
     enviarTexto();
@@ -73,7 +66,7 @@ export const chatGrupal = () => {
   });
 
   function enviarTexto() {
-    let texto = miInputGrupal.value;
+    const texto = miInputGrupal.value;
     const keyUsuario = localStorage.getItem("Api_Ingresada");
 
     historialText.push({ role: "user", content: texto });
@@ -91,7 +84,7 @@ export const chatGrupal = () => {
       arregloDePromesas.push(getCompletion(keyUsuario, historialText));
       //historialText.push({ role: "user", content: texto });
     });
-    console.log(arregloDePromesas);
+
     Promise.all(arregloDePromesas)
       .then((arregloDeRespuestas) => {
         arregloDeRespuestas.forEach((respuesta) => {
@@ -99,24 +92,22 @@ export const chatGrupal = () => {
             role: "assistant",
             content: respuesta.choices[0].message.content,
           });
-
-          console.log(respuesta);
         });
         mostrarHistorial();
       })
       .catch((error) => {
-        console.error("Error:", error);
+        alert("Error:", error);
       });
   }
 
   function mostrarHistorial() {
-    let contenedor = contenedorTextoGrupal;
+    const contenedor = contenedorTextoGrupal;
     contenedor.innerHTML = "";
 
-    let mostrarMensajeSystem = false;
+    const mostrarMensajeSystem = false;
     historialText.forEach(function (mensaje) {
       if (!(mensaje.role === "system" && !mostrarMensajeSystem)) {
-        let nuevoDiv = document.createElement("div");
+        const nuevoDiv = document.createElement("div");
         nuevoDiv.classList.add("textIndividual");
 
         //se crea un class para darle color a los mensajes de "user" y diferenciarlos del mensaje del "assistant"
@@ -128,7 +119,7 @@ export const chatGrupal = () => {
           nuevoDiv.classList.add("systemMensajeGrupal");
         }
 
-        let nuevoParrafo = document.createElement("p");
+        const nuevoParrafo = document.createElement("p");
         nuevoParrafo.innerText = mensaje.content;
         nuevoDiv.appendChild(nuevoParrafo);
         contenedor.appendChild(nuevoDiv);

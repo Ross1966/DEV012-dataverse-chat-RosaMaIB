@@ -415,7 +415,8 @@ h1{
     height: 400px;
     position: fixed;
     margin-top: 0px;
-    margin-left: 0px;
+    margin-left: 20px;
+    
     
 }
 .lista{
@@ -558,6 +559,10 @@ label{
 .abrir-menu,
 .cerrar-menu{
     display: none;
+    
+}
+.abrir-menu{
+    position: fixed;
 }
 
 #sinDatos{
@@ -585,21 +590,24 @@ label{
         
         background-color: transparent;
         cursor: pointer;
-        position: absolute;
+        
 
     }
 
     .abrir-menu {
         color: #92ee1a9d;
-        font-size: 30px;
+        font-size: 50px;
         position: fixed;
-        margin-top: 20px;
+        margin-top: -220px;
+        
         
     }
 
     .cerrar-menu {
         color: #f80909;
         font-size: 50px;
+        position: absolute;
+        top: 20px;
     }
 
 
@@ -609,10 +617,11 @@ label{
         display: flex;
         flex-direction: column;
         align-items:center;
+        justify-content: center;
         gap: 0px;
         position: absolute;
-        top:0;
-        left: 0;
+        top:100px;
+        left: -20px;
         
         background-color: #ffffff;
         padding: 50px;
@@ -622,7 +631,7 @@ label{
         text-align: center;
         border-radius: 0px 30px 30px 0px;
         position: fixed;
-        margin-top: 15px;
+        margin-top: -80px;
     }
     .contenedor1.visible{
         opacity: 1;
@@ -632,12 +641,12 @@ label{
     h1{
         background-color:  rgb(0, 0, 0);
         color: rgb(255, 255, 255);
-        margin: 0px -180px 0px 0px;
+        margin: 30px 0px 0px -10px;
         border-radius: 0px 0px 0px 0px;
         display: flex;
         justify-content: center;
         font-size: 50px;
-        padding: 45px 170px 10px 170px;
+        padding: 45px 0px 10px 0px;
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
@@ -666,7 +675,7 @@ label{
         list-style-type: none;
         gap: 300px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 250px;
         margin-left: 290px;
     }
     footer{
@@ -692,6 +701,136 @@ label{
     .descripcion{
         font-size: 11px;
     }
+    #tarjetaPrincipal{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(252, 252, 252);
+        border-radius: 50px;
+        
+    }
+    #contenedorInput{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        width: 100%;
+        height: 565px;
+        flex-direction: column;
+        
+        border-radius: 0px 0px 20px 20px;
+        border-style: none;
+        margin-top: 0px;
+        
+    }
+    #contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        /*
+        text-align: end;
+        */
+        background-color: #8FCC73;
+        width: 94%;
+        height: 430px;
+        max-height: 430px;
+        overflow-y: auto;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #000000;
+    }
+    .textIndividual{
+        margin: 5px 15px;
+        /*
+        background-color: rgb(241, 174, 208);
+        */
+        border-radius: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #miInput{
+        width: 90%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+    .botones{
+        display: flex;
+    }
+    #mostrarTexto{
+        background-color: black;
+        color:rgb(252, 252, 252);
+        border-radius: 50px;
+        border-color: rgb(252, 252, 252);
+        padding: 10px;
+        margin-top: 5px;
+    }
+   
+    #contenedorTarjeta{
+        text-align: center;
+        background-color:rgb(252, 252, 252);
+        width: 99%;
+        height: 765px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 2px;
+        margin-bottom: 0px;
+        border-radius: 20px 20px 0px 0px;
+        border-style:none;
+        
+        
+    }
+    #home, #home2{
+
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: 30px ;
+        top: 33px;
+        border-radius: 50%;
+        background-color:gold;
+        position: fixed;
+    
+    }
+    .apiSection{
+        display: flex;
+        position: absolute;
+        background-color: #8FCC73;
+        width: 70%;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        margin: 200px 300px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 5px;
+        left: -245px;
+
+        
+    }
+    .cajaApi{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .inputApi{
+        border-radius: 10px;
+        width: 60%;
+        height: 20px;
+        margin: 10px;
+    }
+    .botonApi{
+        border-radius: 100px;
+        width: 30%;
+        height: 20px;
+    }
+    .koala{
+        width: 100px;
+        height: 130px;
+        position:fixed;
+        margin-top: -95px;
+        margin-left: 105px;
+    }
 }
 
 @media screen and (min-width: 400px) and (max-width: 415px){
@@ -714,9 +853,9 @@ label{
 
     .abrir-menu {
         color: #92ee1a9d;
-        font-size: 30px;
+        font-size: 40px;
         position: fixed;
-        margin-top: 20px;
+        margin-top: -180px;
         
     }
 
@@ -740,12 +879,13 @@ label{
         background-color: #ffffff;
         padding: 50px;
         box-shadow: 0 0 0 100vmax rgba(165, 138, 138, 0.5);
-        width: 35%;
-        height: 500px;
+        width: 45%;
+        height: 700px;
         text-align: center;
         border-radius: 0px 30px 30px 0px;
         position: fixed;
         margin-top: 15px;
+        margin-left: 0px;
     }
     .contenedor1.visible{
         opacity: 1;
@@ -760,7 +900,7 @@ label{
         display: flex;
         justify-content: center;
         font-size: 50px;
-        padding: 45px 100px 10px 100px;
+        padding: 50px 0px 15px 0px;
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
@@ -788,7 +928,7 @@ label{
         list-style-type: none;
         gap: 180px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 200px;
         margin-left: 290px;
     }
     footer{
@@ -804,6 +944,136 @@ label{
         font-size: 25px;
         color: #ffffff;
         margin-left: 0px;
+    }
+    #tarjetaPrincipal{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(252, 252, 252);
+        border-radius: 50px;
+        
+    }
+    #contenedorInput{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        width: 100%;
+        height: 565px;
+        flex-direction: column;
+        
+        border-radius: 0px 0px 20px 20px;
+        border-style: none;
+        margin-top: 0px;
+        
+    }
+    #contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        /*
+        text-align: end;
+        */
+        background-color: #8FCC73;
+        width: 94%;
+        height: 430px;
+        max-height: 430px;
+        overflow-y: auto;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #000000;
+    }
+    .textIndividual{
+        margin: 5px 15px;
+        /*
+        background-color: rgb(241, 174, 208);
+        */
+        border-radius: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #miInput{
+        width: 90%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+    .botones{
+        display: flex;
+    }
+    #mostrarTexto{
+        background-color: black;
+        color:rgb(252, 252, 252);
+        border-radius: 50px;
+        border-color: rgb(252, 252, 252);
+        padding: 10px;
+        margin-top: 5px;
+    }
+   
+    #contenedorTarjeta{
+        text-align: center;
+        background-color:rgb(252, 252, 252);
+        width: 99%;
+        height: 765px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 2px;
+        margin-bottom: 0px;
+        border-radius: 20px 20px 0px 0px;
+        border-style:none;
+        
+        
+    }
+    #home, #home2{
+
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: 30px ;
+        top: 33px;
+        border-radius: 50%;
+        background-color:gold;
+        position: fixed;
+    
+    }
+    .apiSection{
+        display: flex;
+        position: absolute;
+        background-color: #8FCC73;
+        width: 70%;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        margin: 200px 300px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 5px;
+        left: -265px;
+
+        
+    }
+    .cajaApi{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .inputApi{
+        border-radius: 10px;
+        width: 60%;
+        height: 20px;
+        margin: 10px;
+    }
+    .botonApi{
+        border-radius: 100px;
+        width: 30%;
+        height: 20px;
+    }
+    .koala{
+        width: 80px;
+        height: 100px;
+        position:fixed;
+        margin-top: -65px;
+        margin-left: 85px;
     }
 }
 
@@ -823,9 +1093,9 @@ label{
 
     .abrir-menu {
         color: #92ee1a9d;
-        font-size: 30px;
+        font-size: 40px;
         position: fixed;
-        margin-top: 20px;
+        margin-top: -180px;
 
     }
     .cerrar-menu {
@@ -847,12 +1117,13 @@ label{
         background-color: #FFFFFF;
         padding: 50px;
         box-shadow: 0 0 0 100vmax rgba(165, 138, 138, 0.5);
-        width: 35%;
-        height: 500px;
+        width: 45%;
+        height: 700px;
         text-align: center;
         border-radius: 0px 30px 30px 0px;
         position: fixed;
         margin-top: 15px;
+        margin-left: 0px;
     }
     .contenedor1.visible{
         opacity: 1;
@@ -867,7 +1138,7 @@ label{
         display: flex;
         justify-content: center;
         font-size: 50px;
-        padding: 45px 90px 10px 90px;
+        padding: 50px 0px 15px 0px;
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
@@ -893,7 +1164,7 @@ label{
         list-style-type: none;
         gap: 180px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 200px;
         margin-left: 290px;
     }
     footer{
@@ -908,6 +1179,137 @@ label{
         font-size: 25px;
         color: #FFFFFF;
         margin-left: 0px;
+    }
+    #tarjetaPrincipal{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(252, 252, 252);
+        border-radius: 50px;
+        
+    }
+    #contenedorInput{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        width: 100%;
+        height: 565px;
+        flex-direction: column;
+        
+        border-radius: 0px 0px 20px 20px;
+        border-style: none;
+        margin-top: 0px;
+        
+    }
+    #contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        /*
+        text-align: end;
+        */
+        background-color: #8FCC73;
+        width: 94%;
+        height: 430px;
+        max-height: 430px;
+        overflow-y: auto;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #000000;
+    }
+    .textIndividual{
+        margin: 5px 15px;
+        /*
+        background-color: rgb(241, 174, 208);
+        */
+        border-radius: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #miInput{
+        width: 90%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+    .botones{
+        display: flex;
+    }
+    #mostrarTexto{
+        background-color: black;
+        color:rgb(252, 252, 252);
+        border-radius: 50px;
+        border-color: rgb(252, 252, 252);
+        padding: 10px;
+        margin-top: 5px;
+    }
+   
+    #contenedorTarjeta{
+        text-align: center;
+        background-color:rgb(252, 252, 252);
+        width: 99%;
+        height: 765px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 2px;
+        margin-bottom: 0px;
+        border-radius: 20px 20px 0px 0px;
+        border-style:none;
+        
+        
+    }
+    #home, #home2{
+
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: 30px ;
+        top: 33px;
+        border-radius: 50%;
+        background-color:gold;
+        position: fixed;
+    
+    }
+    .apiSection{
+        display: flex;
+        position: absolute;
+        background-color: #8FCC73;
+        width: 70%;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        margin: 200px 300px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 5px;
+        left: -265px;
+        top: 100px;
+
+        
+    }
+    .cajaApi{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .inputApi{
+        border-radius: 10px;
+        width: 60%;
+        height: 20px;
+        margin: 10px;
+    }
+    .botonApi{
+        border-radius: 100px;
+        width: 30%;
+        height: 20px;
+    }
+    .koala{
+        width: 80px;
+        height: 100px;
+        position:fixed;
+        margin-top: -65px;
+        margin-left: 85px;
     }
 }
 
@@ -931,15 +1333,16 @@ label{
 
     .abrir-menu {
         color: #92ee1a9d;
-        font-size: 30px;
+        font-size: 40px;
         position: fixed;
-        margin-top: 20px;
+        margin-top: -180px;
         
     }
 
     .cerrar-menu {
         color: #f80909;
         font-size: 50px;
+        
     }
 
 
@@ -950,23 +1353,25 @@ label{
         flex-direction: column;
         align-items:center;
         gap: 0px;
-        position: absolute;
+        
         top:0;
         left: 0;
-        
-        background-color: #ffffff;
+
+        background-color: #FFFFFF;
         padding: 50px;
         box-shadow: 0 0 0 100vmax rgba(165, 138, 138, 0.5);
-        width: 35%;
+        width: 40%;
         height: 500px;
         text-align: center;
         border-radius: 0px 30px 30px 0px;
         position: fixed;
         margin-top: 15px;
+        margin-left: 0px;
     }
     .contenedor1.visible{
         opacity: 1;
         visibility: visible;
+        display: block;
     }
 
     h1{
@@ -977,7 +1382,7 @@ label{
         display: flex;
         justify-content: center;
         font-size: 50px;
-        padding: 45px 80px 10px 80px;
+        padding: 50px 0px 15px 0px;
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
@@ -1005,7 +1410,7 @@ label{
         list-style-type: none;
         gap: 180px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 200px;
         margin-left: 290px;
     }
     footer{
@@ -1021,6 +1426,137 @@ label{
         font-size: 25px;
         color: #ffffff;
         margin-left: 0px;
+    }
+    #tarjetaPrincipal{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(252, 252, 252);
+        border-radius: 50px;
+        
+    }
+    #contenedorInput{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        width: 100%;
+        height: 565px;
+        flex-direction: column;
+        
+        border-radius: 0px 0px 20px 20px;
+        border-style: none;
+        margin-top: 0px;
+        
+    }
+    #contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        /*
+        text-align: end;
+        */
+        background-color: #8FCC73;
+        width: 94%;
+        height: 430px;
+        max-height: 430px;
+        overflow-y: auto;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #000000;
+    }
+    .textIndividual{
+        margin: 5px 15px;
+        /*
+        background-color: rgb(241, 174, 208);
+        */
+        border-radius: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #miInput{
+        width: 90%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+    .botones{
+        display: flex;
+    }
+    #mostrarTexto{
+        background-color: black;
+        color:rgb(252, 252, 252);
+        border-radius: 50px;
+        border-color: rgb(252, 252, 252);
+        padding: 10px;
+        margin-top: 5px;
+    }
+   
+    #contenedorTarjeta{
+        text-align: center;
+        background-color:rgb(252, 252, 252);
+        width: 99%;
+        height: 765px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 2px;
+        margin-bottom: 0px;
+        border-radius: 20px 20px 0px 0px;
+        border-style:none;
+        
+        
+    }
+    #home, #home2{
+
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: 30px ;
+        top: 33px;
+        border-radius: 50%;
+        background-color:gold;
+        position: fixed;
+    
+    }
+    .apiSection{
+        display: flex;
+        position: absolute;
+        background-color: #8FCC73;
+        width: 70%;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        margin: 200px 300px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 5px;
+        left: -265px;
+        top: 100px;
+
+        
+    }
+    .cajaApi{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .inputApi{
+        border-radius: 10px;
+        width: 60%;
+        height: 20px;
+        margin: 10px;
+    }
+    .botonApi{
+        border-radius: 100px;
+        width: 30%;
+        height: 20px;
+    }
+    .koala{
+        width: 80px;
+        height: 100px;
+        position:fixed;
+        margin-top: -85px;
+        margin-left: 85px;
     }
 }
 
@@ -1043,9 +1579,9 @@ label{
 
     .abrir-menu {
         color: #92ee1a9d;
-        font-size: 30px;
+        font-size: 40px;
         position: fixed;
-        margin-top: 20px;
+        margin-top: -180px;
         
     }
 
@@ -1075,6 +1611,7 @@ label{
         border-radius: 0px 30px 30px 0px;
         position: fixed;
         margin-top: 15px;
+        margin-left: 0px;
     }
     .contenedor1.visible{
         opacity: 1;
@@ -1089,7 +1626,7 @@ label{
         display: flex;
         justify-content: center;
         font-size: 50px;
-        padding: 45px 60px 10px 60px;
+        padding: 50px 0px 15px 0px;
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
@@ -1117,7 +1654,7 @@ label{
         list-style-type: none;
         gap: 180px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 200px;
         margin-left: 290px;
     }
     footer{
@@ -1133,6 +1670,137 @@ label{
         font-size: 25px;
         color: #ffffff;
         margin-left: 0px;
+    }
+    #tarjetaPrincipal{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(252, 252, 252);
+        border-radius: 50px;
+        
+    }
+    #contenedorInput{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        width: 100%;
+        height: 565px;
+        flex-direction: column;
+        
+        border-radius: 0px 0px 20px 20px;
+        border-style: none;
+        margin-top: 0px;
+        
+    }
+    #contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        /*
+        text-align: end;
+        */
+        background-color: #8FCC73;
+        width: 94%;
+        height: 430px;
+        max-height: 430px;
+        overflow-y: auto;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #000000;
+    }
+    .textIndividual{
+        margin: 5px 15px;
+        /*
+        background-color: rgb(241, 174, 208);
+        */
+        border-radius: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #miInput{
+        width: 90%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+    .botones{
+        display: flex;
+    }
+    #mostrarTexto{
+        background-color: black;
+        color:rgb(252, 252, 252);
+        border-radius: 50px;
+        border-color: rgb(252, 252, 252);
+        padding: 10px;
+        margin-top: 5px;
+    }
+   
+    #contenedorTarjeta{
+        text-align: center;
+        background-color:rgb(252, 252, 252);
+        width: 99%;
+        height: 865px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 2px;
+        margin-bottom: 0px;
+        border-radius: 20px 20px 0px 0px;
+        border-style:none;
+        
+        
+    }
+    #home, #home2{
+
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: 30px ;
+        top: 33px;
+        border-radius: 50%;
+        background-color:gold;
+        position: fixed;
+    
+    }
+    .apiSection{
+        display: flex;
+        position: absolute;
+        background-color: #8FCC73;
+        width: 70%;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        margin: 200px 300px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 5px;
+        left: -275px;
+        top: 100px;
+
+        
+    }
+    .cajaApi{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .inputApi{
+        border-radius: 10px;
+        width: 60%;
+        height: 20px;
+        margin: 10px;
+    }
+    .botonApi{
+        border-radius: 100px;
+        width: 30%;
+        height: 20px;
+    }
+    .koala{
+        width: 80px;
+        height: 100px;
+        position:fixed;
+        margin-top: -85px;
+        margin-left: 65px;
     }
 }
 @media screen and (min-width: 280px) and (max-width: 290px){
@@ -1154,9 +1822,9 @@ label{
 
     .abrir-menu {
         color: #92ee1a9d;
-        font-size: 30px;
+        font-size: 40px;
         position: fixed;
-        margin-top: 2px;
+        margin-top: -170px;
         
     }
 
@@ -1180,12 +1848,13 @@ label{
         background-color: #ffffff;
         padding: 50px;
         box-shadow: 0 0 0 100vmax rgba(165, 138, 138, 0.5);
-        width: 35%;
+        width: 40%;
         height: 500px;
         text-align: center;
         border-radius: 0px 30px 30px 0px;
         position: fixed;
         margin-top: 15px;
+        margin-left: 0px;
     }
     .contenedor1.visible{
         opacity: 1;
@@ -1200,7 +1869,7 @@ label{
         display: flex;
         text-align: center;
         font-size: 40px;
-        padding: 65px 63px 10px 63px;
+        padding: 70px 0px 15px 0px;
         box-shadow: 0px 0px 0px rgb(3, 3, 3);
         text-shadow: 4px 1px 0px rgb(78, 78, 78);
     }
@@ -1229,7 +1898,7 @@ label{
         list-style-type: none;
         gap: 180px;
         flex-wrap: wrap;
-        margin-top: 50px;
+        margin-top: 200px;
        
     }
     footer{
@@ -1245,5 +1914,137 @@ label{
         font-size: 25px;
         color: #ffffff;
         margin-left: 0px;
+    }
+    #tarjetaPrincipal{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(252, 252, 252);
+        border-radius: 50px;
+        
+    }
+    #contenedorInput{
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        width: 100%;
+        height: 565px;
+        flex-direction: column;
+        
+        border-radius: 0px 0px 20px 20px;
+        border-style: none;
+        margin-top: 0px;
+        
+    }
+    #contenedorTexto{
+        display: flex;
+        flex-direction: column;
+        /*
+        text-align: end;
+        */
+        background-color: #8FCC73;
+        width: 94%;
+        height: 430px;
+        max-height: 430px;
+        overflow-y: auto;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #000000;
+    }
+    .textIndividual{
+        margin: 5px 15px;
+        /*
+        background-color: rgb(241, 174, 208);
+        */
+        border-radius: 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #miInput{
+        width: 90%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 20px;
+        padding: 5px 10px;
+    }
+    .botones{
+        display: flex;
+    }
+    #mostrarTexto{
+        background-color: black;
+        color:rgb(252, 252, 252);
+        border-radius: 50px;
+        border-color: rgb(252, 252, 252);
+        padding: 10px;
+        margin-top: 5px;
+    }
+   
+    #contenedorTarjeta{
+        text-align: center;
+        background-color:rgb(252, 252, 252);
+        width: 99%;
+        height: 900px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 50px;
+        padding: 2px;
+        margin-bottom: 0px;
+        border-radius: 20px 20px 0px 0px;
+        border-style:none;
+        
+        
+    }
+    #home, #home2{
+
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: 30px ;
+        top: 33px;
+        border-radius: 50%;
+        background-color:gold;
+        position: fixed;
+    
+    }
+    .apiSection{
+        display: flex;
+        position: absolute;
+        background-color: #8FCC73;
+        width: 70%;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        margin: 200px 300px;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 5px;
+        left: -280px;
+        top: 100px;
+
+        
+    }
+    .cajaApi{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .inputApi{
+        border-radius: 10px;
+        width: 60%;
+        height: 20px;
+        margin: 10px;
+    }
+    .botonApi{
+        border-radius: 100px;
+        width: 30%;
+        height: 20px;
+    }
+    .koala{
+        width: 80px;
+        height: 100px;
+        position:fixed;
+        margin-top: -85px;
+        margin-left: 55px;
     }
 }

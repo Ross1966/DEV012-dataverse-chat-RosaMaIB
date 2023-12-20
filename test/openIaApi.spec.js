@@ -1,9 +1,11 @@
 import { getCompletion } from "../src/lib/openIAapi";
+//import { describe, it, expect, jest } from "node:test";
+
 const openIaRespuesta = jest.fn().mockResolvedValueOnce({choices:[{message:"foo"}]});
 global.fetch = jest.fn(() =>
-  Promise((resolve) => resolve( {
+  Promise.resolve({
     json: openIaRespuesta,
-  }))
+  })
 );
 describe("endpoint de openIa", () => {
   it("La api es llamada con los datos adecuados", () => {

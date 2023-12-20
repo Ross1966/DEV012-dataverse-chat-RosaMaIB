@@ -1,4 +1,3 @@
-import dataset from "../data/dataset.js";
 
 export const sortData = (dataset, sortBy, sortOrder) => {
   dataset.sort((a, b) => {

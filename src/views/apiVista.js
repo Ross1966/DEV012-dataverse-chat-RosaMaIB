@@ -39,10 +39,7 @@ export const vistaApi = () => {
   ingresar.addEventListener("click", function () {
     const entrada = apiView.querySelector("#entrada").value;
 
-    const password = localStorage.setItem("Api_Ingresada", entrada);
-
-    console.log(entrada);
-    console.log(password);
+    localStorage.setItem("Api_Ingresada", entrada);
   });
 
   return apiView;
