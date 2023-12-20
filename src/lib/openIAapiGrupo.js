@@ -40,3 +40,4 @@ export function getCompletion(apiKey, historial) {
     .then((res) => res.json())
     .catch((error) => alert("Error:", error));
 }
+
