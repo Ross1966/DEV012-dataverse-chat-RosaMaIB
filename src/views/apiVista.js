@@ -40,14 +40,8 @@ export const vistaApi = () => {
     const entrada = apiView.querySelector("#entrada").value;
 
     localStorage.setItem("Api_Ingresada", entrada);
-
-    //console.log(entrada);
-    //console.log(password);
   });
 
   return apiView;
-}; 
-
-
-
+};
 

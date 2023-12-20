@@ -1,5 +1,10 @@
 import { getElementById } from "../lib/apiData.js";
-import { getCompletion, iniciarChat, agregarMensajeIA, agregarMensajesUsuario,} from "../lib/openIAapi.js";
+import {
+  getCompletion,
+  iniciarChat,
+  agregarMensajeIA,
+  agregarMensajesUsuario,
+} from "../lib/openIAapi.js";
 import { navigateTo } from "../router.js";
 
 export const Detalle = () => {
@@ -37,7 +42,7 @@ export const Detalle = () => {
   const mostrarTexto = result.querySelector("#mostrarTexto");
   const miInput = result.querySelector("#miInput");
   const contenedorTexto = result.querySelector("#contenedorTexto");
-  
+
   const historialText = iniciarChat(animal.name);
 
   //mostrarHistorial()
@@ -56,18 +61,15 @@ export const Detalle = () => {
     agregarMensajesUsuario(texto);
     const keyUsuario = localStorage.getItem("Api_Ingresada");
     getCompletion(keyUsuario, historialText).then((respuesta) => {
-      //console.log(respuesta);
       agregarMensajeIA(respuesta.choices[0].message.content);
       miInput.value = "";
       //console.log("SOY EL ADDEVENT LISTENER");
       mostrarHistorial();
     });
-    
   }
   function mostrarHistorial() {
     const contenedor = contenedorTexto;
     contenedor.innerHTML = "";
-
     const mostrarMensajeSystem = false;
     historialText.forEach(function (mensaje) {
       if (!(mensaje.role === "system" && !mostrarMensajeSystem)) {
@@ -96,3 +98,4 @@ export const Detalle = () => {
 
   return result;
 };
+

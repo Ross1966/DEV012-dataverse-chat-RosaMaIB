@@ -20,7 +20,7 @@ export function iniciarChat(nombre) {
   historialMensaje.push({
     role: "system",
     content: "Respóndeme como si fueras un " + nombre,
-    //"content": "Hola soy un " + nombre
+
   });
   return historialMensaje;
 }
@@ -38,6 +38,7 @@ export function getCompletion(apiKey, historial) {
     }),
   })
     .then((res) => res.json())
-    .catch((error) => ("Error:", error));
-}
 
+    .catch((error) => alert("Error:", error));
+
+}

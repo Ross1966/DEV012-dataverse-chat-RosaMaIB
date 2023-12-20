@@ -1,4 +1,5 @@
 //FUNCION PARA EL LLAMADO DE LA API GRUPAL
+
 const historialMensajeGrupal = [];
 
 export function agregarMensajesUsuario(mensaje) {
@@ -20,7 +21,6 @@ export function iniciarChat(nombre) {
   historialMensajeGrupal.push({
     role: "system",
     content: "Resnpondeme como si fueras un " + nombre,
-    //"content": "Hola soy un " + nombre
   });
   return historialMensajeGrupal;
 }
@@ -38,5 +38,6 @@ export function getCompletion(apiKey, historial) {
     }),
   })
     .then((res) => res.json())
-    .catch((error) => ("Error:", error));
+    .catch((error) => alert("Error:", error));
 }
+

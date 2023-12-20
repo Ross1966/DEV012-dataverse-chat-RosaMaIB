@@ -1,7 +1,6 @@
-//import { getElementById } from "../lib/apiData.js";
 import dataset from "../data/dataset.js";
 import { navigateTo } from "../router.js";
-import { getCompletion} from "../lib/openIAapiGrupo.js";
+import { getCompletion } from "../lib/openIAapiGrupo.js";
 
 export const chatGrupal = () => {
   const contenedorPrincipal = document.createElement("div");
@@ -44,11 +43,12 @@ export const chatGrupal = () => {
   const contenedorChat = document.createElement("div");
   contenedorChat.classList.add("contenedorChat");
   contenedorChat.appendChild(contenedorInputGrupal);
-  
+  /*contenedorChat.appendChild(contenedorTextoGrupal)
+    contenedorChat.appendChild(miInputGrupal)
+    contenedorChat.appendChild(mostrarTexto)*/
 
   contenedorPrincipal.appendChild(resultadoLista);
   contenedorPrincipal.appendChild(contenedorChat);
-  //console.log(contenedorChat);
 
   ///CHAT GRUPAL
 
@@ -60,7 +60,7 @@ export const chatGrupal = () => {
   miInputGrupal.addEventListener("keydown", function (e) {
     // Verificar si la tecla presionada es "Enter"
     if (e.key === "Enter") {
-      e.preventDefault(); 
+      e.preventDefault(); // Evitar el comportamiento predeterminado del "Enter" en un campo de texto (como agregar una nueva línea)
       enviarTexto();
     }
   });
@@ -68,41 +68,35 @@ export const chatGrupal = () => {
   function enviarTexto() {
     const texto = miInputGrupal.value;
     const keyUsuario = localStorage.getItem("Api_Ingresada");
-    if (keyUsuario === "") {
-      alert("No Ingresaste un código APi");
-    }
-    historialText.push({ role: "user", content: texto });
-    //console.log("llamando a la petición");
-    const arregloDePromesas = dataset.map((animal) => {
-      
-      const historialAnimal = [
-        {
-          role: "system",
-          content: "Resnpondeme como si fueras un " + animal.name,
-        },
-        { role: "user", content: texto },
-      ];
 
-      
-      return getCompletion(keyUsuario, historialAnimal).then((respuesta) => {
-        return {
-          animal: animal.name,
-          respuesta: respuesta.choices[0].message.content,
-        };
+    historialText.push({ role: "user", content: texto });
+
+    const arregloDePromesas = [];
+    dataset.forEach((animal) => {
+      //historialText.push(iniciarChat(animal.name))
+      //agregarMensajesUsuario(texto)
+      historialText.push({
+        role: "system",
+        content: "Resnpondeme como si fueras un " + animal.name,
       });
+
+      //console.log("SOY EL CONSOLE DE AGREGARMENSAJEUSUARIO", agregarMensajesUsuario())
+      arregloDePromesas.push(getCompletion(keyUsuario, historialText));
+      //historialText.push({ role: "user", content: texto });
     });
-    
+
     Promise.all(arregloDePromesas)
       .then((arregloDeRespuestas) => {
-        arregloDeRespuestas.forEach((result) => {
-          historialText.push({ role: "assistant", content: result.respuesta });
-
-          //console.log(respuesta)
+        arregloDeRespuestas.forEach((respuesta) => {
+          historialText.push({
+            role: "assistant",
+            content: respuesta.choices[0].message.content,
+          });
         });
         mostrarHistorial();
       })
-      .catch(() => {
-        
+      .catch((error) => {
+        alert("Error:", error);
       });
   }
 
