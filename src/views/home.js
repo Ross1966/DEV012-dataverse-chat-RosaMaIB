@@ -50,7 +50,6 @@ export const Home = () => {
             <button id="api">Api Key</button>
             </div>
       `;
-      
 
   //FUNCION PARA ORDENAR DATOS ASCENDENTE Y DESCENDENTE
 
@@ -68,7 +67,9 @@ export const Home = () => {
 
   //FUNCION PARA FILTRAR ANIMALES POR SU DIETA
 
-  const tipoDieta = filtros.querySelector(`select[data-testid="select-filter"]`);
+  const tipoDieta = filtros.querySelector(
+    `select[data-testid="select-filter"]`
+  );
   //console.log(tipoDieta)
 
   tipoDieta.addEventListener("change", (e) => {
@@ -90,7 +91,7 @@ export const Home = () => {
     tipoDieta.value = "";
     ordenar.value = "";
     const regresar = renderItems(data);
-   
+
     listaAnimales.replaceChild(regresar, listadoAnimales);
     listadoAnimales = regresar;
   });
@@ -98,7 +99,6 @@ export const Home = () => {
   //BOTON CHAT GRUPAL
   const chatGrupo = filtros.querySelector("#chatGrupo");
   chatGrupo.addEventListener("click", function () {
-    
     navigateTo("/chatGrupal", "props");
   });
 
@@ -109,8 +109,6 @@ export const Home = () => {
     navigateTo("/ApiKey", "props");
   });
 
-  
-  
   const crearDivView = document.createElement("div");
   crearDivView.classList.add("contenedor2");
   crearDivView.innerHTML = filtros.innerHTML;
@@ -120,24 +118,21 @@ export const Home = () => {
   mainContainer.appendChild(listaAnimales);
   listaAnimales.appendChild(listadoAnimales);
   mainContainer.appendChild(Footer());
-  
 
   mainContainer.appendChild(crearDivView);
 
   //MENU HAMBURGUESA
-  const contenedor1 = filtros.querySelector("#contenedor1")
+  const contenedor1 = filtros.querySelector("#contenedor1");
   const cerrar = filtros.querySelector("#cerrar-menu");
-const abrir = filtros.querySelector("#abrir-menu");
+  const abrir = filtros.querySelector("#abrir-menu");
 
-abrir.addEventListener("click", () => {
-  contenedor1.classList.add("visible");
-  console.log("Hola")
-});
+  abrir.addEventListener("click", () => {
+    contenedor1.classList.add("visible");
+  });
 
-cerrar.addEventListener("click", () => {
-  contenedor1.classList.remove("visible");
-});
-console.log("Soy el menu hamburguesa", crearDivView)
+  cerrar.addEventListener("click", () => {
+    contenedor1.classList.remove("visible");
+  });
 
   return mainContainer;
 };
