@@ -49,6 +49,12 @@ En el módulo de ordenamiento, puedes hacer lo siguiente:
 •	Botón de chat grupal, que nos direcciona a nuestra pantalla de chat grupal
 •	Botón de Api Key, nos permite ingresar nuestra Api para tener acceso a nuestros Chats ya sean grupal o individual. 
 
+
+![Alt text](image.png)
+
+
+
+
 2.- Filtro de ordenamiento
 
 En el primer filtro que es el de ordenamiento como usuaria quiero ver como ordenar mis tarjetas alfabéticamente de la A – Z y de la Z – A, dependiendo la opción elegida.
