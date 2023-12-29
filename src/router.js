@@ -30,3 +30,4 @@ export const onURLChange = () => {
   const pathname = window.location.pathname;
   renderView(pathname);
 };
+

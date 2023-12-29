@@ -1,6 +1,5 @@
 import { getCompletion } from "../src/lib/openIAapi";
 //import { describe, it, expect, jest } from "node:test";
-
 const openIaRespuesta = jest
   .fn()
   .mockResolvedValueOnce({ choices: [{ message: "foo" }] });
@@ -28,7 +27,6 @@ describe("endpoint de openIa", () => {
       }
     );
   });
-
   it("El edpoint responde de manera correcta", () => {
     const response = {
       choices: [
@@ -49,7 +47,6 @@ describe("endpoint de openIa", () => {
       }
     );
   });
-
   describe("Respuesta definida", () => {
     it("Obteniendo la respuesta del GetCompletion", () => {
       const mensajes = [{ role: "user", content: "foo" }];

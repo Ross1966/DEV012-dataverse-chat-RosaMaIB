@@ -98,3 +98,4 @@ export const Detalle = () => {
 
   return result;
 };
+
