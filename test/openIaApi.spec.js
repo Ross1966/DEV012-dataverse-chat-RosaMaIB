@@ -38,7 +38,9 @@ describe("endpoint de openIa", () => {
         },
       ],
     };
+
     openIaRespuesta.mockResolvedValueOnce(response);
+
     return getCompletion("12345", [{ role: "user", content: "foo" }]).then(
       (resolved) => {
         expect(resolved).toBe(response);
@@ -53,12 +55,3 @@ describe("endpoint de openIa", () => {
     });
   });
 });
-
-
-
-
-
-
-
-
-

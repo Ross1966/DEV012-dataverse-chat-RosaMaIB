@@ -1,5 +1,6 @@
 import { sortData, filterDataByDiet } from '../src/lib/dataFunctions.js';
 import dataset from '../src/data/dataset.js';
+
 const TEST_FILTRO_DIETA = "Insectívora"
 describe('filtrarDieta', () => {
   it('Deberia devolver 4 animales insectívoros', () => {
