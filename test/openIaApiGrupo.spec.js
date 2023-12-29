@@ -1,4 +1,4 @@
-import { getCompletion } from "../src/lib/openIAapi";
+import { getCompletion } from "../src/lib/openIAapiGrupo";
 //import { describe, it, expect, jest } from "node:test";
 
 const openIaRespuesta = jest

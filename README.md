@@ -16,6 +16,8 @@
 
 ## 1. Preámbulo
 
+
+
 En nuestro día a día, las aplicaciones web son como amigas
 inseparables. Desde las redes sociales hasta las herramientas de
 trabajo, las usamos todo el tiempo. Pero lo que hace que este

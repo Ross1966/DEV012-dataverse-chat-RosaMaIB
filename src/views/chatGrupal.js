@@ -2,9 +2,13 @@ import dataset from "../data/dataset.js";
 import { navigateTo } from "../router.js";
 import { getCompletion } from "../lib/openIAapiGrupo.js";
 
+
 export const chatGrupal = () => {
   const contenedorPrincipal = document.createElement("div");
   contenedorPrincipal.classList.add("contenedorPrincipal");
+
+ 
+
   const resultadoLista = document.createElement("ul");
   resultadoLista.classList.add("ulGrupal");
 
@@ -139,6 +143,7 @@ export const chatGrupal = () => {
 
   contenedorBoton.innerHTML = botonHome;
   contenedorPrincipal.appendChild(contenedorBoton);
+
 
   const regresaHome = contenedorPrincipal.querySelector("#botonHome");
 
